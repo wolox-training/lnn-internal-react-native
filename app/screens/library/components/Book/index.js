@@ -4,12 +4,12 @@ import { View, Text, Image } from 'react-native';
 
 import { styles } from './styles';
 
-function Book({ title, author, img }) {
+function Book({ title, author, imageUrl }) {
   return (
     <View style={styles.bookContainer} >      
       <Image
         style={styles.bookImage}
-        source={img}
+        source={{ uri: imageUrl }}
       />
       <View>
         <Text style={styles.bookTitle}>

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-import { white, darkGray, softGray } from '../../../../scss/colors';
-import { mediumSize } from '../../../../scss/fonts';
+import { white, darkGray, softGray } from '../../../../../scss/colors';
+import { mediumSize } from '../../../../../scss/fonts';
 
 export const styles = StyleSheet.create({
   bookContainer: {
@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
   },
   bookImage: {
     height: 60,
+    width: 40,
     marginRight: 10
   },
   textContainer: {
