@@ -1,15 +1,19 @@
 import { StyleSheet } from 'react-native';
 
+import { white, darkGray, softGray } from '../../../../scss/colors';
+import { mediumSize } from '../../../../scss/fonts';
+
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  bookContainer: {
     flexDirection: 'row',
+    height: 90,
     paddingHorizontal: 30,
     paddingVertical: 15,
     marginHorizontal: 20,
-    marginVertical: 10
+    marginVertical: 10,
+    backgroundColor: white
   },
-  image: {
+  bookImage: {
     height: 60,
     marginRight: 10
   },
@@ -17,13 +21,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column'
   },
-  title: {
-    fontSize: 20,
+  bookTitle: {
+    fontSize: mediumSize,
     fontWeight: 'bold',
-    color: '#4d4d4d'
+    color: darkGray
   },
-  subTitle: {
-    fontSize: 20,
-    color: '#999999'
+  bookAuthor: {
+    fontSize: mediumSize,
+    color: softGray
   }
 });

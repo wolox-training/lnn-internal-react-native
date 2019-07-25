@@ -6,16 +6,16 @@ import { styles } from './styles';
 
 function Book({ title, author, img }) {
   return (
-    <View style={styles.container} >      
+    <View style={styles.bookContainer} >      
       <Image
-        style={styles.image}
+        style={styles.bookImage}
         source={img}
       />
       <View>
-        <Text style={styles.title}>
+        <Text style={styles.bookTitle}>
           {title}
         </Text>
-        <Text style={styles.subTitle}>
+        <Text style={styles.bookAuthor}>
           {author}
         </Text>
       </View>
