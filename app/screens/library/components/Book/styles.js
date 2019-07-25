@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 15,
     marginHorizontal: 20,
-    marginVertical: 10,
+    marginVertical: 5,
     backgroundColor: white
   },
   bookImage: {
