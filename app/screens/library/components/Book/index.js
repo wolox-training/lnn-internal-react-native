@@ -11,11 +11,11 @@ function Book({ title, author, imageUrl }) {
         style={styles.bookImage}
         source={{ uri: imageUrl }}
       />
-      <View>
-        <Text style={styles.bookTitle}>
+      <View style={styles.textContainer} >
+        <Text style={styles.bookTitle} >
           {title}
         </Text>
-        <Text style={styles.bookAuthor}>
+        <Text style={styles.bookAuthor} >
           {author}
         </Text>
       </View>
