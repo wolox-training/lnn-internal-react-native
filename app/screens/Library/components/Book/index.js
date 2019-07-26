@@ -8,7 +8,7 @@ import { styles } from './styles';
 
 function Book({ title, author, img }) {
   return (
-    <View style={[styles.bookContainer, styles.shadowBox]} >      
+    <View style={styles.bookContainer} >      
       <Image
         style={styles.bookImage}
         source={img ? img : defaultImg}
