@@ -8,7 +8,7 @@ const defaultImgPath = '../../../../../assets/no_image.jpeg';
 
 function Book({ title, author, imageUrl }) {
   return (
-    <View style={styles.bookContainer}>
+    <View style={[styles.bookContainer, styles.shadowBox]}>
       <Image style={styles.bookImage} source={imageUrl ? { uri: imageUrl } : require(defaultImgPath)} />
       <View>
         <Text style={styles.bookTitle}>{title}</Text>
