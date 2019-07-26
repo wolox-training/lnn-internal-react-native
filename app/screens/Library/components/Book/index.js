@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, Image } from 'react-native';
 
+import defaultImg from '../../../../../assets/no_image.jpeg';
+
 import { styles } from './styles';
 
 function Book({ title, author, img }) {
@@ -9,7 +11,7 @@ function Book({ title, author, img }) {
     <View style={styles.bookContainer} >      
       <Image
         style={styles.bookImage}
-        source={img}
+        source={img ? img : defaultImg}
       />
       <View>
         <Text style={styles.bookTitle}>
@@ -26,13 +28,11 @@ function Book({ title, author, img }) {
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string
+  img: PropTypes.number
 };
 
 Book.defaultProps = {
-  title: '',
-  author: '',
-  imageUrl: ''
+  img: defaultImg
 };
 
 export default Book;

@@ -5,29 +5,32 @@ import { mediumSize } from '../../../../scss/fonts';
 
 export const styles = StyleSheet.create({
   bookContainer: {
-    flexDirection: 'row',
+    backgroundColor: white,
+    borderRadius: 5,
     height: 90,
+    shadowOffset: { width: 0, height: 1 },
+    shadowColor: '#000',
+    shadowOpacity: 1.0,
+    shadowRadius: 5,
+    elevation: 8,
+    flexDirection: 'row',
     paddingHorizontal: 30,
     paddingVertical: 15,
     marginHorizontal: 20,
-    marginVertical: 10,
-    backgroundColor: white
+    marginVertical: 10
   },
   bookImage: {
     height: 60,
+    width: 40,
     marginRight: 10
   },
-  textContainer: {
-    flex: 1,
-    flexDirection: 'column'
-  },
   bookTitle: {
+    color: darkGray,
     fontSize: mediumSize,
-    fontWeight: 'bold',
-    color: darkGray
+    fontWeight: 'bold'
   },
   bookAuthor: {
-    fontSize: mediumSize,
-    color: softGray
+    color: softGray,
+    fontSize: mediumSize
   }
 });

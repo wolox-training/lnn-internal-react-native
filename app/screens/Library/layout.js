@@ -11,7 +11,7 @@ function Library() {
     <Book
       title='A Little Bird Told Me'
       author='Timothy Cross'
-      img={img}
+      img={null}
     />
     </View>
   );
