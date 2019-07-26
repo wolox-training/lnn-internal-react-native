@@ -8,6 +8,7 @@ const elevation = 5;
 
 export const styles = StyleSheet.create({
   bookContainer: {
+    ...elevationShadowStyle(elevation),
     backgroundColor: white,
     borderRadius: 5,
     height: 90,
@@ -17,7 +18,6 @@ export const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginVertical: 5
   },
-  shadowBox: elevationShadowStyle(elevation),
   bookImage: {
     height: 60,
     width: 40,
