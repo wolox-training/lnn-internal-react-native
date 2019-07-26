@@ -11,7 +11,7 @@ function Book({ title, author, imageUrl }) {
     <View style={styles.bookContainer} >      
       <Image
         style={styles.bookImage}
-        source={{ uri: imageUrl || defaultImgPath }}
+        source={imageUrl ? { uri: imageUrl } : require(defaultImgPath)}
       />
       <View style={styles.textContainer} >
         <Text style={styles.bookTitle} >
