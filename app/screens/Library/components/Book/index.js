@@ -4,12 +4,14 @@ import { View, Text, Image } from 'react-native';
 
 import { styles } from './styles';
 
+const defaultImgPath = '../../../../../assets/no_image.jpeg';
+
 function Book({ title, author, imageUrl }) {
   return (
     <View style={styles.bookContainer} >      
       <Image
         style={styles.bookImage}
-        source={{ uri: imageUrl }}
+        source={{ uri: imageUrl || defaultImgPath }}
       />
       <View style={styles.textContainer} >
         <Text style={styles.bookTitle} >
@@ -30,9 +32,7 @@ Book.propTypes = {
 };
 
 Book.defaultProps = {
-  title: '',
-  author: '',
-  imageUrl: ''
+  imageUrl: defaultImgPath
 };
 
 export default Book;

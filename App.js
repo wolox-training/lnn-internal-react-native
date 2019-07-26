@@ -1,7 +1,7 @@
 
-import React, {Fragment} from 'react';
+import React from 'react';
 
-import LibraryContainer from './app/screens/library/index';
+import LibraryContainer from './app/screens/Library';
 
 const App = () => {
   return (

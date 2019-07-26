@@ -15,14 +15,14 @@ class LibraryContainer extends Component {
     />
   );
 
-  _keyExtractor = item => item.id.toString();
+  keyExtractor = item => item.id.toString();
 
   render() {
     return (
       <Library
         data={DATA}
         renderBook={this.renderBook}
-        keyExtractor={this._keyExtractor}
+        keyExtractor={this.keyExtractor}
       />
     )
   }
