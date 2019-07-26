@@ -13,7 +13,7 @@ function Book({ title, author, imageUrl }) {
         style={styles.bookImage}
         source={imageUrl ? { uri: imageUrl } : require(defaultImgPath)}
       />
-      <View style={styles.textContainer} >
+      <View>
         <Text style={styles.bookTitle} >
           {title}
         </Text>
