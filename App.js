@@ -1,12 +1,10 @@
-
 import React from 'react';
 
-import LibraryContainer from './app/screens/Library';
+// import LibraryContainer from './app/screens/Library';
+import BookDetailContainer from './app/screens/BookDetail';
 
 const App = () => {
-  return (
-    <LibraryContainer />
-  );
+  return <BookDetailContainer />;
 };
 
 export default App;

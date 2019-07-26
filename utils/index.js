@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 export function elevationShadowStyle(elevation) {
   return {
     elevation,
