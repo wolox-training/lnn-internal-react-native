@@ -7,12 +7,11 @@ import Library from './layout';
 import Book from './components/Book';
 
 class LibraryContainer extends Component {
-  handleBookClick = () => {
-    this.props.navigation.navigate('bookDetail')
+  handleBookClick = data => {
+    this.props.navigation.navigate('bookDetail', data)
   }
 
-
-  renderBook = ({ item: { title, author, image_url: imageUrl } }) => <Book data={{ title, author, imageUrl }} handleBookClick={this.handleBookClick} />;
+  renderBook = ({ item }) => <Book data={item} handleBookClick={this.handleBookClick} />;
 
   keyExtractor = item => item.id.toString();
 

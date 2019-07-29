@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-// import { DATA } from '../../../constants/index';
-
 import BookDetail from './layout';
 
 class BookDetailContainer extends Component {
@@ -10,15 +8,10 @@ class BookDetailContainer extends Component {
   onPressRent = () => null;
 
   render() {
+    const { params } = this.props.navigation.state;
     return (
       <BookDetail
-        data={{
-          title: 'UX Stories',
-          author: 'Timothy Cross',
-          year: '1982',
-          genre: 'Novel',
-          imagePath: undefined
-        }}
+        data={params}
         handleAdd={this.onPressAdd}
         handleRent={this.onPressRent}
       />
