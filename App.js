@@ -1,10 +1,10 @@
 import React from 'react';
 
-// import LibraryContainer from './app/screens/Library';
-import BookDetailContainer from './app/screens/BookDetail';
+import AppNavigator from './navigation/AppNavigation';
+// import LibraryContainer from './app/screens/Library/index';
 
 const App = () => {
-  return <BookDetailContainer />;
+  return <AppNavigator />;
 };
 
 export default App;

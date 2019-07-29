@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Text } from 'react-native';
 
 import { DATA } from '../../../constants/index';
 
@@ -6,7 +7,12 @@ import Library from './layout';
 import Book from './components/Book';
 
 class LibraryContainer extends Component {
-  renderBook = ({ item }) => <Book title={item.title} author={item.author} imageUrl={item.image_url} />;
+  handleBookClick = () => {
+    this.props.navigation.navigate('bookDetail')
+  }
+
+
+  renderBook = ({ item: { title, author, image_url: imageUrl } }) => <Book title={title} author={author} imageUrl={imageUrl} handleBookClick={this.handleBookClick} />;
 
   keyExtractor = item => item.id.toString();
 
