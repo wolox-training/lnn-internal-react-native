@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { DATA } from '../../../constants/index';
+// import { DATA } from '../../../constants/index';
 
 import BookDetail from './layout';
 
@@ -10,7 +10,19 @@ class BookDetailContainer extends Component {
   onPressRent = () => null;
 
   render() {
-    return <BookDetail data={DATA} handleAdd={this.onPressAdd} handleRent={this.onPressRent} />;
+    return (
+      <BookDetail
+        data={{
+          title: 'UX Stories',
+          author: 'Timothy Cross',
+          year: '1982',
+          genre: 'Novel',
+          imagePath: undefined
+        }}
+        handleAdd={this.onPressAdd}
+        handleRent={this.onPressRent}
+      />
+    );
   }
 }
 

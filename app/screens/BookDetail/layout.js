@@ -1,17 +1,8 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-
-import { mainBackgroundColor } from '../../../scss/colors';
+import { View } from 'react-native';
 
 import BookDetailOptions from './components/BookDetailOptions';
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    backgroundColor: mainBackgroundColor,
-    flex: 1
-  }
-});
+import { styles } from './styles';
 
 function BookDetail(props) {
   return (
