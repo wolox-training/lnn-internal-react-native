@@ -4,11 +4,9 @@ import { elevationShadowStyle } from '../../../../../utils';
 import { white, darkGray, softGray } from '../../../../../scss/colors';
 import { mediumSize } from '../../../../../scss/fonts';
 
-const elevation = 5;
-
 export const styles = StyleSheet.create({
   bookContainer: {
-    ...elevationShadowStyle(elevation),
+    ...elevationShadowStyle(2),
     backgroundColor: white,
     borderRadius: 5,
     height: 90,
