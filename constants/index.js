@@ -48,7 +48,7 @@ export const DATA = [
   {
      "id":6,
      "author":"Paula Hawkins",
-     "title":"The Girl on the Train\n",
+     "title":"The Girl on the Train",
      "genre":"suspense",
      "publisher":"Riverhead Books",
      "year":"2015",
