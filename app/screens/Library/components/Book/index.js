@@ -6,7 +6,7 @@ import defaultImg from '../../../../../assets/no_image.jpeg';
 
 import { styles } from './styles';
 
-function Book({ title, author, imageUrl, handleBookClick }) {
+function Book({ data: { title, author, imageUrl }, handleBookClick }) {
   return (
     <TouchableOpacity style={styles.bookContainer} onPress={() => handleBookClick()}>
       <Image style={styles.bookImage} source={imageUrl ? { uri: imageUrl } : defaultImg} />
@@ -17,11 +17,11 @@ function Book({ title, author, imageUrl, handleBookClick }) {
     </TouchableOpacity>
   );
 }
-/*
+
 Book.propTypes = {
-  author: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  author: PropTypes.string,
+  title: PropTypes.string,
   imageUrl: PropTypes.string
 };
-*/
+
 export default Book;

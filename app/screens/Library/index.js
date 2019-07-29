@@ -12,7 +12,7 @@ class LibraryContainer extends Component {
   }
 
 
-  renderBook = ({ item: { title, author, image_url: imageUrl } }) => <Book title={title} author={author} imageUrl={imageUrl} handleBookClick={this.handleBookClick} />;
+  renderBook = ({ item: { title, author, image_url: imageUrl } }) => <Book data={{ title, author, imageUrl }} handleBookClick={this.handleBookClick} />;
 
   keyExtractor = item => item.id.toString();
 
