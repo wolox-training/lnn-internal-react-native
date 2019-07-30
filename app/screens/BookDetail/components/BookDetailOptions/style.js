@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { elevationShadowStyle } from '../../../../../utils'
-import { mediumSize, smallSize } from '../../../../../scss/fonts';
+import { hightSize , mediumSize } from '../../../../../scss/fonts';
 import { darkGray, white } from '../../../../../scss/colors';
 
 export const styles = StyleSheet.create({
@@ -23,12 +23,12 @@ export const styles = StyleSheet.create({
   },
   bookTitle: {
     color: darkGray,
-    fontSize: mediumSize,
+    fontSize: hightSize,
     fontWeight: 'bold',
     paddingVertical: 2
   },
   bookInfo: {
-    fontSize: smallSize,
+    fontSize: mediumSize,
     color: darkGray
   }
 });

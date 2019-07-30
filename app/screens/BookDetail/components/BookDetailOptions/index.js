@@ -8,7 +8,7 @@ import { lightBlue, white } from '../../../../../scss/colors';
 
 import { styles } from './style';
 
-function BookDetailOptions({ data: { title, author, year, genre, imageUrl } }) {
+function BookDetailOptions({ data: { title, author, year, genre, image_url: imageUrl } }) {
   return (
     <View style={styles.container}>
       <View style={styles.bookContainer}>

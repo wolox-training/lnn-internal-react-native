@@ -7,6 +7,10 @@ import Library from './layout';
 import Book from './components/Book';
 
 class LibraryContainer extends Component {
+  static navigationOptions = {
+    header: null
+  }
+
   handleBookClick = data => {
     this.props.navigation.navigate('bookDetail', data)
   }

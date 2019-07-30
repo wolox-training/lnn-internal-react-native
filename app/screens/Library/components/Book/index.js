@@ -6,7 +6,7 @@ import defaultImg from '../../../../../assets/no_image.jpeg';
 
 import { styles } from './styles';
 
-function Book({ data, data: { title, author, imageUrl }, handleBookClick }) {
+function Book({ data, data: { title, author, image_url: imageUrl }, handleBookClick }) {
   return (
     <TouchableOpacity style={styles.bookContainer} onPress={() => handleBookClick(data)}>
       <Image style={styles.bookImage} source={imageUrl ? { uri: imageUrl } : defaultImg} />
