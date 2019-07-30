@@ -6,33 +6,22 @@ import defaultImg from '../../../../../assets/no_image.jpeg';
 
 import { styles } from './styles';
 
-function Book({ title, author, img }) {
+function Book({ title, author, imageUrl }) {
   return (
-    <View style={styles.bookContainer} >      
-      <Image
-        style={styles.bookImage}
-        source={img ? img : defaultImg}
-      />
+    <View style={styles.bookContainer}>
+      <Image style={styles.bookImage} source={imageUrl ? { uri: imageUrl } : defaultImg} />
       <View>
-        <Text style={styles.bookTitle}>
-          {title}
-        </Text>
-        <Text style={styles.bookAuthor}>
-          {author}
-        </Text>
+        <Text style={styles.bookTitle}>{title}</Text>
+        <Text style={styles.bookAuthor}>{author}</Text>
       </View>
     </View>
   );
-};
+}
 
 Book.propTypes = {
-  title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  img: PropTypes.number
-};
-
-Book.defaultProps = {
-  img: defaultImg
+  title: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string
 };
 
 export default Book;

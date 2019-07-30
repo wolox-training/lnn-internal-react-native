@@ -1,20 +1,23 @@
 import React from 'react';
-import { View } from 'react-native';
+import PropTypes from 'prop-types';
+import { View, FlatList } from 'react-native';
+
+import { bookDataPropType } from '../../../propTypes/BookData';
 
 import { styles } from './styles';
-import Book from './components/Book';
-import img from './assets/img_book1.png';
 
-function Library() {
+function Library({ data, renderBook, keyExtractor }) {
   return (
     <View style={styles.container}>
-      <Book
-        title='A Little Bird Told Me'
-        author='Timothy Cross'
-        img={img}
-      />
+      <FlatList data={data} renderItem={renderBook} keyExtractor={keyExtractor} />
     </View>
   );
 }
+
+Library.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape(bookDataPropType)).isRequired,
+  keyExtractor: PropTypes.func.isRequired,
+  renderBook: PropTypes.func.isRequired
+};
 
 export default Library;

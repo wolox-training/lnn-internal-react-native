@@ -1,14 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 import { elevationShadowStyle } from '../../../../../utils';
-
 import { white, darkGray, softGray } from '../../../../../scss/colors';
 import { mediumSize } from '../../../../../scss/fonts';
 
-
 export const styles = StyleSheet.create({
   bookContainer: {
-    ...elevationShadowStyle(5),
+    ...elevationShadowStyle(2),
     backgroundColor: white,
     borderRadius: 5,
     height: 90,
@@ -16,7 +14,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 15,
     marginHorizontal: 20,
-    marginVertical: 10
+    marginVertical: 5
   },
   bookImage: {
     height: 60,
