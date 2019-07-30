@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import PropTypes from 'prop-types';
 
 export const bookDataPropType = {
@@ -7,6 +8,11 @@ export const bookDataPropType = {
   publisher: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   year: PropTypes.string.isRequired,
-  // eslint-disable-next-line camelcase
   image_url: PropTypes.string
-}
+};
+
+export const commentDataPropType = {
+  user_name: PropTypes.string.isRequired,
+  comment: PropTypes.string.isRequired,
+  image_url: PropTypes.string
+};

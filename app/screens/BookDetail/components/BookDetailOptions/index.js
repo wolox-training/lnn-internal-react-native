@@ -5,13 +5,12 @@ import { View, Text, Image } from 'react-native';
 import defaultImg from '../../../../../assets/no_image.jpeg';
 import Button from '../../../../components/baseComponents/Button';
 import { lightBlue, white } from '../../../../../scss/colors';
-import { styles as screenStyles } from '../../styles';
 
 import { styles } from './style';
 
 function BookDetailOptions({ data: { title, author, year, genre, image_url: imageUrl } }) {
   return (
-    <View style={screenStyles.componentsContainer}>
+    <View style={styles.container}>
       <View style={styles.bookContainer}>
         <Image style={styles.bookCover} source={imageUrl ? { uri: imageUrl } : defaultImg} />
         <View>
@@ -37,7 +36,8 @@ BookDetailOptions.propTypes = {
     genre: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
-    imageUrl: PropTypes.string
+    // eslint-disable-next-line camelcase
+    image_url: PropTypes.string
   })
 };
 

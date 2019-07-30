@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, FlatList } from 'react-native';
 
-import { bookDataPropType } from '../../../propTypes/BookData';
+import { bookDataPropType } from '../../../propTypes';
 
 import { styles } from './styles';
 

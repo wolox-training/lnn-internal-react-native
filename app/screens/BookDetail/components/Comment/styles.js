@@ -1,9 +1,13 @@
 import { StyleSheet } from 'react-native';
 
+import { mediumSize } from '../../../../../scss/fonts';
+import { darkGray } from '../../../../../scss/colors';
+
 export const styles = StyleSheet.create({
   container: {
     flex: 0,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginBottom: 36
   },
   commentImage: {
     height: 50,
@@ -11,13 +15,14 @@ export const styles = StyleSheet.create({
     borderRadius: 50
   },
   textContainer: {
-    flex: 2,
     marginLeft: 20
   },
   commentUser: {
+    fontSize: mediumSize,
     fontWeight: 'bold'
   },
   commentText: {
-    fontSize: 10
+    fontSize: mediumSize,
+    color: darkGray
   }
 });

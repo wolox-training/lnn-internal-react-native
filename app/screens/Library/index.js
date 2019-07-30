@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { DATA } from '../../../constants/index';
 
@@ -9,13 +9,14 @@ import Book from './components/Book';
 class LibraryContainer extends Component {
   static navigationOptions = {
     header: null
-  }
+  };
 
   handleBookClick = data => {
-    this.props.navigation.navigate('bookDetail', data)
-  }
+    const { navigation } = this.props;
+    return navigation.navigate('bookDetail', data);
+  };
 
-  renderBook = ({ item }) => <Book data={item} handleBookClick={this.handleBookClick} />;
+  renderBook = ({ item }) => <Book data={item} onBookClick={this.handleBookClick} />;
 
   keyExtractor = item => item.id.toString();
 
@@ -23,5 +24,9 @@ class LibraryContainer extends Component {
     return <Library data={DATA} renderBook={this.renderBook} keyExtractor={this.keyExtractor} />;
   }
 }
+
+LibraryContainer.propTypes = {
+  navigation: PropTypes.shape({ navigate: PropTypes.func })
+};
 
 export default LibraryContainer;

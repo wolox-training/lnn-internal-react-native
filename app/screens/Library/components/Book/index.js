@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 
+import { bookDataPropType } from '../../../../../propTypes';
 import defaultImg from '../../../../../assets/no_image.jpeg';
 
 import { styles } from './styles';
 
-function Book({ data, data: { title, author, image_url: imageUrl }, handleBookClick }) {
+function Book({ data, data: { title, author, image_url: imageUrl }, onBookClick }) {
   return (
-    <TouchableOpacity style={styles.bookContainer} onPress={() => handleBookClick(data)}>
+    // eslint-disable-next-line react/jsx-no-bind
+    <TouchableOpacity style={styles.bookContainer} onPress={() => onBookClick(data)}>
       <Image style={styles.bookImage} source={imageUrl ? { uri: imageUrl } : defaultImg} />
       <View>
         <Text style={styles.bookTitle}>{title}</Text>
@@ -19,9 +21,8 @@ function Book({ data, data: { title, author, image_url: imageUrl }, handleBookCl
 }
 
 Book.propTypes = {
-  author: PropTypes.string,
-  title: PropTypes.string,
-  imageUrl: PropTypes.string
+  data: PropTypes.shape(bookDataPropType).isRequired,
+  onBookClick: PropTypes.func
 };
 
 export default Book;
