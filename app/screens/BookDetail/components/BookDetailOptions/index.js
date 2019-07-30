@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { View, Text, Image } from 'react-native';
 
-import defaultImg from '../../../../../assets/img_book1@2x.png.png';
+import defaultImg from '../../../../../assets/no_image.jpeg';
 import Button from '../../../../components/baseComponents/Button';
 import { lightBlue, white } from '../../../../../scss/colors';
 
