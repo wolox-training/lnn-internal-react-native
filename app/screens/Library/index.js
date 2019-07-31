@@ -11,12 +11,7 @@ class LibraryContainer extends Component {
     header: null
   };
 
-  onBookClick = data => {
-    const { navigation } = this.props;
-    navigation.navigate('bookDetail', data);
-  };
-
-  renderBook = ({ item }) => <Book data={item} handleBookClick={this.onBookClick} />;
+  renderBook = ({ item }) => <Book data={item} {...this.props} />;
 
   keyExtractor = item => item.id.toString();
 
