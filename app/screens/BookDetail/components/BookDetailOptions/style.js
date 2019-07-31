@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-import { elevationShadowStyle } from '../../../../../utils'
-import { hightSize , mediumSize } from '../../../../../scss/fonts';
+import { elevationShadowStyle } from '../../../../../utils';
+import { hightSize, mediumSize } from '../../../../../scss/fonts';
 import { darkGray, white } from '../../../../../scss/colors';
 
 export const styles = StyleSheet.create({
