@@ -9,9 +9,8 @@ import { styles } from './styles';
 
 class Book extends Component {
   handleBookClick = () => {
-    const { data } = this.props;
-    // eslint-disable-next-line react/prop-types
-    this.props.navigation.navigate('bookDetail', data);
+    const { data, navigation } = this.props;
+    navigation.navigate('bookDetail', data);
   };
 
   render() {
@@ -31,6 +30,7 @@ class Book extends Component {
 }
 
 Book.propTypes = {
+  navigation: PropTypes.shape({ navigate: PropTypes.func.isRequired }).isRequired,
   data: PropTypes.shape(bookDataPropType)
 };
 
