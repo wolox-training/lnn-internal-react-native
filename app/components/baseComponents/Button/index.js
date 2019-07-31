@@ -14,11 +14,7 @@ function Button({ title, containerStyle: { backgroundColor, color } }) {
 
 Button.propTypes = {
   title: PropTypes.string.isRequired,
-  withBackgroundColor: PropTypes.bool
+  containerStyle: PropTypes.shape({ backgroundColor: PropTypes.string, color: PropTypes.string })
 };
-
-Button.defaultProps = {
-  withBackgroundColor: false
-}
 
 export default Button;

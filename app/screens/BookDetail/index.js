@@ -8,14 +8,9 @@ class BookDetailContainer extends Component {
   onPressRent = () => null;
 
   render() {
-    const { params } = this.props.navigation.state;
-    return (
-      <BookDetail
-        data={params}
-        handleAdd={this.onPressAdd}
-        handleRent={this.onPressRent}
-      />
-    );
+    const { navigation } = this.props;
+    const { params } = navigation.state;
+    return <BookDetail data={params} handleAdd={this.onPressAdd} handleRent={this.onPressRent} />;
   }
 }
 
