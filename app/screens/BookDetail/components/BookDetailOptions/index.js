@@ -2,6 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { View, Text, Image } from 'react-native';
 
+import { bookDataPropType } from '../../../../../propTypes';
 import defaultImg from '../../../../../assets/no_image.jpeg';
 import Button from '../../../../components/baseComponents/Button';
 import { lightBlue, white } from '../../../../../scss/colors';
@@ -15,11 +16,9 @@ function BookDetailOptions({ data: { title, author, year, genre, image_url: imag
         <Image style={styles.bookCover} source={imageUrl ? { uri: imageUrl } : defaultImg} />
         <View>
           <Text style={styles.bookTitle}>{title}</Text>
-          <View>
-            <Text style={styles.bookInfo}>{author}</Text>
-            <Text style={styles.bookInfo}>{genre}</Text>
-            <Text style={styles.bookInfo}>{year}</Text>
-          </View>
+          <Text style={styles.bookInfo}>{author}</Text>
+          <Text style={styles.bookInfo}>{genre}</Text>
+          <Text style={styles.bookInfo}>{year}</Text>
         </View>
       </View>
       <View>
@@ -31,14 +30,17 @@ function BookDetailOptions({ data: { title, author, year, genre, image_url: imag
 }
 
 BookDetailOptions.propTypes = {
-  data: PropTypes.shape({
-    author: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    year: PropTypes.string.isRequired,
-    // eslint-disable-next-line camelcase
-    image_url: PropTypes.string
-  })
+  data: PropTypes.shape(bookDataPropType)
+};
+
+BookDetailOptions.defaultProps = {
+  data: {
+    title: 'Title not found',
+    author: 'Author not found',
+    year: '-',
+    genre: '-',
+    imageUrl: null
+  }
 };
 
 export default BookDetailOptions;
