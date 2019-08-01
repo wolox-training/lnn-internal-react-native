@@ -22,6 +22,9 @@ export const styles = StyleSheet.create({
     height: 100,
     marginRight: 20
   },
+  bookInfoContainer: {
+    width: 170
+  },
   bookTitle: {
     color: darkGray,
     fontSize: hightSize,
