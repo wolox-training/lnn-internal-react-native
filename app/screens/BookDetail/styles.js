@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   commentsContainer: {
     flex: 1,
     marginHorizontal: 20,
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
     paddingVertical: 15,
     backgroundColor: white,
     ...elevationShadowStyle(2)

@@ -5,7 +5,7 @@ import { darkGray } from '../../../../../scss/colors';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 0,
+    flex: 1,
     flexDirection: 'row',
     marginBottom: 36
   },
@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
     borderRadius: 50
   },
   textContainer: {
+    flex: 1,
     marginLeft: 20
   },
   commentUser: {
@@ -23,6 +24,7 @@ export const styles = StyleSheet.create({
   },
   commentText: {
     fontSize: mediumSize,
-    color: darkGray
+    color: darkGray,
+    textAlign: 'justify'
   }
 });
