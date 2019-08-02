@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, FlatList } from 'react-native';
+import { Text, View, FlatList, TouchableOpacity } from 'react-native';
 
 import { bookDataPropType, commentDataPropType } from '../../../propTypes';
 
@@ -13,7 +13,9 @@ function BookDetail({ bookData, commentsData, renderComment, keyExtractor }) {
       <BookDetailOptions data={bookData} />
       <View style={styles.commentsContainer}>
         <FlatList data={commentsData} renderItem={renderComment} keyExtractor={keyExtractor} />
-        <Text style={styles.viewAllText}>View All</Text>
+        <TouchableOpacity>
+          <Text style={styles.viewAllText}>View All</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
