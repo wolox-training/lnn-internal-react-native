@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { DATA } from '../../../constants/index';
 
@@ -18,5 +19,9 @@ class LibraryContainer extends Component {
     return <Library data={DATA} renderBook={this.renderBook} keyExtractor={this.keyExtractor} />;
   }
 }
+
+LibraryContainer.propTypes = {
+  navigation: PropTypes.shape({ navigate: PropTypes.func })
+};
 
 export default LibraryContainer;

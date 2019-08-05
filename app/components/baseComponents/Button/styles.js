@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: lightBlue,
     height: 45,
-    marginBottom: 10
+    marginVertical: 5
   },
   buttonText: {
     fontWeight: 'bold'

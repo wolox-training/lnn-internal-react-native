@@ -14,14 +14,14 @@ function BookDetailOptions({ data: { title, author, year, genre, image_url: imag
     <View style={styles.container}>
       <View style={styles.bookContainer}>
         <Image style={styles.bookCover} source={imageUrl ? { uri: imageUrl } : defaultImg} />
-        <View>
+        <View style={styles.bookInfoContainer}>
           <Text style={styles.bookTitle}>{title}</Text>
           <Text style={styles.bookInfo}>{author}</Text>
           <Text style={styles.bookInfo}>{genre}</Text>
           <Text style={styles.bookInfo}>{year}</Text>
         </View>
       </View>
-      <View>
+      <View style={styles.buttonContainer}>
         <Button title="ADD TO WISHLIST" containerStyle={{ backgroundColor: white, color: lightBlue }} />
         <Button title="RENT" containerStyle={{ backgroundColor: lightBlue, color: white }} />
       </View>

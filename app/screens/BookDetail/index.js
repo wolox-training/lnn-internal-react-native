@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { COMMENT_DATA } from '../../../comments';
 import { bookDataPropType } from '../../../propTypes';
 
+import Comment from './components/Comment';
 import BookDetail from './layout';
 
 class BookDetailContainer extends Component {
@@ -10,10 +12,23 @@ class BookDetailContainer extends Component {
 
   onPressRent = () => null;
 
+  renderComment = ({ item }) => <Comment data={item} />;
+
+  keyExtractor = item => item.id.toString();
+
   render() {
     const { navigation } = this.props;
     const { params } = navigation.state;
-    return <BookDetail data={params} handleAdd={this.onPressAdd} handleRent={this.onPressRent} />;
+    return (
+      <BookDetail
+        bookData={params}
+        handleAdd={this.onPressAdd}
+        handleRent={this.onPressRent}
+        commentsData={COMMENT_DATA}
+        renderComment={this.renderComment}
+        keyExtractor={this.keyExtractor}
+      />
+    );
   }
 }
 

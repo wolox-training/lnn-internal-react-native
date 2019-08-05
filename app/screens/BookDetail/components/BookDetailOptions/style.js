@@ -6,6 +6,7 @@ import { darkGray, white } from '../../../../../scss/colors';
 
 export const styles = StyleSheet.create({
   container: {
+    marginVertical: 10,
     marginHorizontal: 20,
     paddingHorizontal: 30,
     paddingVertical: 15,
@@ -13,13 +14,15 @@ export const styles = StyleSheet.create({
     ...elevationShadowStyle(2)
   },
   bookContainer: {
-    flexDirection: 'row',
-    marginBottom: 30
+    flexDirection: 'row'
   },
   bookCover: {
     width: 70,
     height: 100,
     marginRight: 20
+  },
+  bookInfoContainer: {
+    flex: 1
   },
   bookTitle: {
     color: darkGray,
@@ -30,5 +33,8 @@ export const styles = StyleSheet.create({
   bookInfo: {
     fontSize: mediumSize,
     color: darkGray
+  },
+  buttonContainer: {
+    marginVertical: 15
   }
 });
