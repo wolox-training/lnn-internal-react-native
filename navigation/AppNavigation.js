@@ -11,20 +11,20 @@ import { lightBlue, gray } from '../scss/colors';
 import ImageHeader from './components/ImageHeader';
 import BackButtonHeader from './components/BackButtonHeader';
 import { styles } from './styles';
-import { HOME } from './constants';
+import { ROUTES } from './constants';
 
 const LibraryStack = createStackNavigator(
   {
     library: {
       screen: LibraryContainer,
       navigationOptions: {
-        title: 'Library'
+        title: 'LIBRARY'
       }
     },
     bookDetail: {
       screen: BookDetailContainer,
       navigationOptions: {
-        title: 'Book Detail'
+        title: 'BOOK DETAIL'
       }
     }
   },
@@ -43,7 +43,7 @@ const WishlistStack = createStackNavigator(
     wishlist: {
       screen: WishlistContainer,
       navigationOptions: {
-        title: 'Wishlist'
+        title: 'WISHLIST'
       }
     }
   },
@@ -68,8 +68,11 @@ const RootTab = createBottomTabNavigator(
         const { routeName } = navigation.state;
         let iconName = '';
         switch (routeName) {
-          case HOME:
+          case ROUTES.LIBRARY:
             iconName = 'bookmark';
+            break;
+          case ROUTES.WISHLIST:
+            iconName = 'star';
             break;
           default:
             iconName = 'circle';

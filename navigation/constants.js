@@ -1,1 +1,4 @@
-export const HOME = 'Library';
+export const ROUTES = {
+  LIBRARY: 'Library',
+  WISHLIST: 'WishList'
+};
