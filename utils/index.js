@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import { black } from '../scss/colors';
 
 export function elevationShadowStyle(elevation) {
@@ -8,4 +9,4 @@ export function elevationShadowStyle(elevation) {
     shadowOpacity: 0.3,
     shadowRadius: 0.8 * elevation
   };
-};
+}

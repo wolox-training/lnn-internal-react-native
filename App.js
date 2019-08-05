@@ -1,12 +1,9 @@
-
 import React from 'react';
 
-import LibraryContainer from './app/screens/Library';
+import AppNavigator from './navigation/AppNavigation';
 
 const App = () => {
-  return (
-    <LibraryContainer />
-  );
+  return <AppNavigator />;
 };
 
 export default App;

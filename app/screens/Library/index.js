@@ -6,7 +6,11 @@ import Library from './layout';
 import Book from './components/Book';
 
 class LibraryContainer extends Component {
-  renderBook = ({ item }) => <Book title={item.title} author={item.author} imageUrl={item.image_url} />;
+  static navigationOptions = {
+    header: null
+  };
+
+  renderBook = ({ item }) => <Book data={item} {...this.props} />;
 
   keyExtractor = item => item.id.toString();
 

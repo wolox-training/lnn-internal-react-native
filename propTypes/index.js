@@ -9,4 +9,4 @@ export const bookDataPropType = {
   year: PropTypes.string.isRequired,
   // eslint-disable-next-line camelcase
   image_url: PropTypes.string
-}
+};
