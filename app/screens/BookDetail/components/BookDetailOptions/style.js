@@ -14,8 +14,7 @@ export const styles = StyleSheet.create({
     ...elevationShadowStyle(2)
   },
   bookContainer: {
-    flexDirection: 'row',
-    marginBottom: 30
+    flexDirection: 'row'
   },
   bookCover: {
     width: 70,
@@ -23,7 +22,7 @@ export const styles = StyleSheet.create({
     marginRight: 20
   },
   bookInfoContainer: {
-    width: 170
+    flex: 1
   },
   bookTitle: {
     color: darkGray,
@@ -34,5 +33,8 @@ export const styles = StyleSheet.create({
   bookInfo: {
     fontSize: mediumSize,
     color: darkGray
+  },
+  buttonContainer: {
+    marginVertical: 15
   }
 });

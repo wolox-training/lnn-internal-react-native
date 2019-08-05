@@ -21,7 +21,7 @@ function BookDetailOptions({ data: { title, author, year, genre, image_url: imag
           <Text style={styles.bookInfo}>{year}</Text>
         </View>
       </View>
-      <View>
+      <View style={styles.buttonContainer}>
         <Button title="ADD TO WISHLIST" containerStyle={{ backgroundColor: white, color: lightBlue }} />
         <Button title="RENT" containerStyle={{ backgroundColor: lightBlue, color: white }} />
       </View>
