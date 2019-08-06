@@ -1,14 +1,22 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
+import { View, FlatList } from 'react-native';
+
+import { bookDataPropType } from '../../../propTypes';
 
 import { styles } from './styles';
 
-function Wishlist() {
+function Wishlist({ books, renderItem }) {
   return (
     <View style={styles.container}>
-      <Text>WishList</Text>
+      <FlatList data={books} renderItem={renderItem} numColumns={6} />
     </View>
   );
 }
+
+Wishlist.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.shape(bookDataPropType)).isRequired,
+  renderItem: PropTypes.string.isRequired
+};
 
 export default Wishlist;
