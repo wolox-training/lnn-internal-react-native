@@ -12,7 +12,14 @@ function Book({ data: { image_url: imageUrl } }) {
 }
 
 Book.propTypes = {
-  data: PropTypes.shape(bookDataPropType).isRequired
+  data: PropTypes.shape(bookDataPropType)
+};
+
+Book.defaultProps = {
+  data: {
+    // eslint-disable-next-line camelcase
+    image_url: null
+  }
 };
 
 export default Book;

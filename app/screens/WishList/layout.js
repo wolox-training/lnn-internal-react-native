@@ -16,7 +16,7 @@ function Wishlist({ books, renderItem }) {
 
 Wishlist.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape(bookDataPropType)).isRequired,
-  renderItem: PropTypes.string.isRequired
+  renderItem: PropTypes.func.isRequired
 };
 
 export default Wishlist;
