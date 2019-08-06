@@ -1,12 +1,12 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
+import { white } from '../scss/colors';
 import LibraryContainer from '../app/screens/Library/index';
 import BookDetailContainer from '../app/screens/BookDetail/index';
 
 import ImageHeader from './components/ImageHeader';
 import BackButtonHeader from './components/BackButtonHeader';
-import { styles } from './styles';
 
 const AppNavigator = createStackNavigator({
     library: {
@@ -26,8 +26,11 @@ const AppNavigator = createStackNavigator({
     initialRouteName: 'library',
     defaultNavigationOptions: {
       headerBackground: <ImageHeader />,
-      headerTitleStyle: styles.titleStyle,
-      headerBackImage: <BackButtonHeader />
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        color: white
+      },
+      headerBackImage: BackButtonHeader
     }
   }
 );
