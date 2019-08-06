@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
+import { hightSize, mediumSize } from '@scss/fonts';
+import { darkGray, white } from '@scss/colors';
 
-import { elevationShadowStyle } from '../../../../../utils';
-import { hightSize, mediumSize } from '../../../../../scss/fonts';
-import { darkGray, white } from '../../../../../scss/colors';
+import { elevationShadowStyle } from '@utils';
 
 export const styles = StyleSheet.create({
   container: {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
-
-import headerImg from '../../../assets/bc_nav_bar.png';
+import headerImg from '@assets/bc_nav_bar.png';
 
 import { styles } from './styles';
 

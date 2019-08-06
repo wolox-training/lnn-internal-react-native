@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
-
-import { lightBlue } from '../../../../scss/colors';
+import { lightBlue } from '@scss/colors';
 
 export const styles = StyleSheet.create({
   buttonContainer: {

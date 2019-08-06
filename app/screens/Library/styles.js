@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
-
-import { mainBackgroundColor } from '../../../scss/colors';
+import { mainBackgroundColor } from '@scss/colors';
 
 export const styles = StyleSheet.create({
   container: {

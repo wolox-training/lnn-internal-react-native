@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { COMMENT_DATA } from '../../../comments';
-import { bookDataPropType } from '../../../propTypes';
 
 import Comment from './components/Comment';
 import BookDetail from './layout';
+
+import { bookDataPropType } from '@propTypes';
 
 class BookDetailContainer extends Component {
   onPressAdd = () => null;

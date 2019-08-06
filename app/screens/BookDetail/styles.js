@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
+import { mainBackgroundColor, white, lightBlue } from '@scss/colors';
+import { mediumSize } from '@scss/fonts';
 
-import { elevationShadowStyle } from '../../../utils';
-import { mainBackgroundColor, white, lightBlue } from '../../../scss/colors';
-import { mediumSize } from '../../../scss/fonts';
+import { elevationShadowStyle } from '@utils';
 
 export const styles = StyleSheet.create({
   container: {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-import { DATA } from '../../../constants/index';
+import { DATA } from '@constants/index';
 
 import Library from './layout';
 import Book from './components/Book';

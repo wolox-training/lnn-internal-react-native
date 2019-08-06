@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, FlatList, TouchableOpacity } from 'react-native';
 
-import { bookDataPropType, commentDataPropType } from '../../../propTypes';
-
 import BookDetailOptions from './components/BookDetailOptions';
 import { styles } from './styles';
+
+import { bookDataPropType, commentDataPropType } from '@propTypes';
 
 function BookDetail({ bookData, commentsData, renderComment, keyExtractor }) {
   return (

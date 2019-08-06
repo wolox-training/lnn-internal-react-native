@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
+import { white, darkGray, softGray } from '@scss/colors';
+import { mediumSize } from '@scss/fonts';
 
-import { elevationShadowStyle } from '../../../../../utils';
-import { white, darkGray, softGray } from '../../../../../scss/colors';
-import { mediumSize } from '../../../../../scss/fonts';
+import { elevationShadowStyle } from '@utils';
 
 export const styles = StyleSheet.create({
   bookContainer: {

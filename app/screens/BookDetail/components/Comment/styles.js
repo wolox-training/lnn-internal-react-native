@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-import { mediumSize } from '../../../../../scss/fonts';
-import { darkGray } from '../../../../../scss/colors';
+import { mediumSize } from '@scss/fonts';
+import { darkGray } from '@scss/colors';
 
 export const styles = StyleSheet.create({
   container: {

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, Image } from 'react-native';
-
-import { commentDataPropType } from '../../../../../propTypes';
 // provisory
-import imgTest1 from '../../../../../assets/img_user1.png';
-import imgTest2 from '../../../../../assets/img_user2.png';
+import imgTest1 from '@assets/img_user1.png';
+import imgTest2 from '@assets/img_user2.png';
 
 import { styles } from './styles';
+
+import { commentDataPropType } from '@propTypes';
 
 // provisory
 const imgTest = [imgTest1, imgTest2];
