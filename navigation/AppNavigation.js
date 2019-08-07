@@ -91,10 +91,7 @@ const RootTab = createBottomTabNavigator(
       tabStyle: { alignContent: 'space-between' },
       activeTintColor: lightBlue,
       inactiveTintColor: gray
-    },
-    headerBackground: <ImageHeader />,
-    headerTitleStyle: styles.titleStyle,
-    headerBackImage: <BackButtonHeader />
+    }
   }
 );
 
