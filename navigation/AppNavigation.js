@@ -53,8 +53,11 @@ const WishlistStack = createStackNavigator(
     initialRouteName: 'wishlist',
     defaultNavigationOptions: {
       headerBackground: <ImageHeader />,
-      headerTitleStyle: styles.titleStyle,
-      headerBackImage: <BackButtonHeader />
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        color: white
+      },
+      headerBackImage: BackButtonHeader
     }
   }
 );
