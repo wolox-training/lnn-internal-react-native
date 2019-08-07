@@ -8,7 +8,8 @@ import BookDetailContainer from '../app/screens/BookDetail/index';
 import ImageHeader from './components/ImageHeader';
 import BackButtonHeader from './components/BackButtonHeader';
 
-const AppNavigator = createStackNavigator({
+const AppNavigator = createStackNavigator(
+  {
     library: {
       screen: LibraryContainer,
       navigationOptions: {
