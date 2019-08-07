@@ -2,15 +2,14 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
 
+import { white, lightBlue, gray } from '../scss/colors';
 import IconComponent from '../app/components/baseComponents/IconComponent';
 import LibraryContainer from '../app/screens/Library/index';
 import BookDetailContainer from '../app/screens/BookDetail/index';
 import WishlistContainer from '../app/screens/WishList';
-import { lightBlue, gray } from '../scss/colors';
 
 import ImageHeader from './components/ImageHeader';
 import BackButtonHeader from './components/BackButtonHeader';
-import { styles } from './styles';
 import { ROUTES } from './constants';
 
 const LibraryStack = createStackNavigator(
@@ -32,8 +31,11 @@ const LibraryStack = createStackNavigator(
     initialRouteName: 'library',
     defaultNavigationOptions: {
       headerBackground: <ImageHeader />,
-      headerTitleStyle: styles.titleStyle,
-      headerBackImage: <BackButtonHeader />
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        color: white
+      },
+      headerBackImage: BackButtonHeader
     }
   }
 );
