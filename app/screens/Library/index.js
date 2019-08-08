@@ -7,10 +7,6 @@ import Library from './layout';
 import Book from './components/Book';
 
 class LibraryContainer extends Component {
-  static navigationOptions = {
-    header: null
-  };
-
   renderBook = ({ item }) => <Book data={item} {...this.props} />;
 
   keyExtractor = item => item.id.toString();

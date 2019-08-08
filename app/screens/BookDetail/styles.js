@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: mainBackgroundColor,
-    paddingTop: 15
+    paddingTop: 35
   },
   commentsContainer: {
     flex: 1,
