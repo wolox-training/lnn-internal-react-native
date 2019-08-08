@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import { white, lightBlue, gray } from '../scss/colors';
 import IconComponent from '../app/components/baseComponents/IconComponent';
@@ -95,4 +95,4 @@ const RootTab = createBottomTabNavigator(
   }
 );
 
-export default createAppContainer(RootTab);
+export default RootTab;
