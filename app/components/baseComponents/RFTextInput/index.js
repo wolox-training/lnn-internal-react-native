@@ -9,13 +9,14 @@ class RFTextInput extends PureComponent {
   onChangeText = () => true;
 
   render() {
-    const { placeholder, placeholderTextColor } = this.props;
+    const { placeholder, placeholderTextColor, secureTextEntry } = this.props;
     return (
       <View style={styles.container}>
         <TextInput
           style={styles.textInput}
           placeholder={placeholder}
           placeholderTextColor={placeholderTextColor}
+          secureTextEntry={secureTextEntry}
         />
       </View>
     );
@@ -24,11 +25,13 @@ class RFTextInput extends PureComponent {
 
 RFTextInput.propTypes = {
   placeholder: PropTypes.string.isRequired,
-  placeholderTextColor: PropTypes.string
+  placeholderTextColor: PropTypes.string,
+  secureTextEntry: PropTypes.bool
 };
 
 RFTextInput.defaultProps = {
-  placeholderTextColor: black
+  placeholderTextColor: black,
+  secureTextEntry: false
 };
 
 export default RFTextInput;

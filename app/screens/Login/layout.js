@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ImageBackground, Image, View } from 'react-native';
+import { ImageBackground, Image, View, Text } from 'react-native';
 import imgBackground from '@assets/bc_inicio.png';
 import imgLogo from '@assets/logo.png';
 import RFTextInput from '@app/components/baseComponents/RFTextInput';
@@ -12,12 +12,15 @@ import { styles } from './styles';
 function Login({ handleOnSubmit }) {
   return (
     <ImageBackground source={imgBackground} style={styles.imageBackground}>
-      <Image source={imgLogo} />
-      <View style={styles.textInputContainer}>
-        <RFTextInput placeholder="Ingrese usuario..." placeholderTextColor={white} />
-        <RFTextInput placeholder="Ingrese contraseña..." placeholderTextColor={white} />
+      <View style={styles.middleContainer}>
+        <Image source={imgLogo} />
+        <View style={styles.textInputContainer}>
+          <RFTextInput placeholder="Ingrese usuario..." placeholderTextColor={white} />
+          <RFTextInput placeholder="Ingrese contraseña..." placeholderTextColor={white} secureTextEntry />
+        </View>
       </View>
       <SubmitButton onPress={handleOnSubmit} />
+      <Text style={styles.footerText}>Designed, developed and used by woloxers</Text>
     </ImageBackground>
   );
 }

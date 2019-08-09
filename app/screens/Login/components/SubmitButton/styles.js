@@ -5,13 +5,16 @@ export const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 20,
-    borderWidth: 1,
+    borderRadius: 100,
+    borderWidth: 2,
     borderColor: white,
     paddingVertical: 10,
-    paddingHorizontal: 100
+    width: 250,
+    marginBottom: 30
   },
   text: {
-    color: white
+    color: white,
+    fontSize: 15,
+    fontWeight: 'bold'
   }
 });

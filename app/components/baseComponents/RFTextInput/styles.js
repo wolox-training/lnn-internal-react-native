@@ -10,6 +10,8 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     borderColor: white,
     borderWidth: 0.7,
-    color: white
+    color: white,
+    paddingLeft: 10,
+    height: 40
   }
 });

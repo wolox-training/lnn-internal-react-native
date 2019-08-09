@@ -7,7 +7,16 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around'
   },
+  middleContainer: {
+    width: '100%',
+    alignItems: 'center'
+  },
   textInputContainer: {
-    width: '100%'
+    width: '100%',
+    marginTop: 30
+  },
+  footerText: {
+    position: 'absolute',
+    bottom: 15
   }
 });
