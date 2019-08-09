@@ -1,8 +1,8 @@
 import { create } from 'apisauce';
-import Config from 'react-native-config';
+// import Config from 'react-native-config';
 
 const api = create({
-  baseURL: Config.REACT_APP_API_BASE_URL,
+  baseURL: 'https://wolox-training-rails.herokuapp.com/api/v1',
   timeout: 5000
 });
 

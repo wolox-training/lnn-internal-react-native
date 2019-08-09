@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DATA } from '@constants/index';
+import BooksService from '@services/BookServices';
 
 import Library from './layout';
 import Book from './components/Book';
 
 class LibraryContainer extends Component {
+  componentDidMount() {
+    const res = BooksService.getBooks();
+    console.warn(res.status);
+  }
+
   renderBook = ({ item }) => <Book data={item} {...this.props} />;
 
   keyExtractor = item => item.id.toString();
