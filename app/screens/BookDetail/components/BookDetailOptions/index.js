@@ -10,11 +10,11 @@ import { styles } from './style';
 
 import { bookDataPropType } from '@propTypes';
 
-function BookDetailOptions({ data: { title, author, year, genre, image_url: imageUrl } }) {
+function BookDetailOptions({ data: { title, author, year, genre, image } }) {
   return (
     <View style={styles.container}>
       <View style={styles.bookContainer}>
-        <Image style={styles.bookCover} source={imageUrl ? { uri: imageUrl } : defaultImg} />
+        <Image style={styles.bookCover} source={image ? { uri: image } : defaultImg} />
         <View style={styles.bookInfoContainer}>
           <Text style={styles.bookTitle}>{title}</Text>
           <Text style={styles.bookInfo}>{author}</Text>
@@ -40,7 +40,7 @@ BookDetailOptions.defaultProps = {
     author: 'Author not found',
     year: '-',
     genre: '-',
-    imageUrl: null
+    image: null
   }
 };
 

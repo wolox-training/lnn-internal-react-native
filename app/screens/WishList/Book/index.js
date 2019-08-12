@@ -8,8 +8,8 @@ import { styles } from './styles';
 
 import { bookDataPropType } from '@propTypes';
 
-function Book({ data: { image_url: imageUrl } }) {
-  return <Image style={styles.image} source={imageUrl ? { uri: imageUrl } : imgDefault} />;
+function Book({ data: { image } }) {
+  return <Image style={styles.image} source={image ? { uri: image } : imgDefault} />;
 }
 
 Book.propTypes = {
@@ -18,8 +18,7 @@ Book.propTypes = {
 
 Book.defaultProps = {
   data: {
-    // eslint-disable-next-line camelcase
-    image_url: null
+    image: null
   }
 };
 
