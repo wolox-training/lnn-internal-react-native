@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { DATA } from '@constants/index';
 import BooksService from '@services/BookServices';
 
 import Library from './layout';
 import Book from './components/Book';
 
 class LibraryContainer extends Component {
+  state = {
+    isLoading: true,
+    books: [],
+    error: ''
+  };
+
   componentDidMount() {
-    const res = BooksService.getBooks();
-    console.warn(res.status);
+    BooksService.getBooks().then(response => {
+      if (response.ok) {
+        this.setState({ books: response.data.page, isLoading: false });
+      } else {
+        this.setState({ error: 'No se pudieron cargar los datos', isLoading: false });
+      }
+    });
   }
 
   renderBook = ({ item }) => <Book data={item} {...this.props} />;
@@ -17,7 +27,16 @@ class LibraryContainer extends Component {
   keyExtractor = item => item.id.toString();
 
   render() {
-    return <Library data={DATA} renderBook={this.renderBook} keyExtractor={this.keyExtractor} />;
+    const { books, error, isLoading } = this.state;
+    return (
+      <Library
+        data={books}
+        renderBook={this.renderBook}
+        keyExtractor={this.keyExtractor}
+        error={error}
+        isLoading={isLoading}
+      />
+    );
   }
 }
 
