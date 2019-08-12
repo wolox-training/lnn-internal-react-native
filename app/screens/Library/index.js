@@ -1,25 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import BooksService from '@services/BookServices';
+import { connect } from 'react-redux'
+import actionCreators from '@redux/Books/actions';
 
 import Library from './layout';
 import Book from './components/Book';
 
 class LibraryContainer extends Component {
-  state = {
-    isLoading: true,
-    books: [],
-    error: ''
-  };
-
   componentDidMount() {
-    BooksService.getBooks().then(response => {
-      if (response.ok) {
-        this.setState({ books: response.data.page, isLoading: false });
-      } else {
-        this.setState({ error: 'No se pudieron cargar los datos', isLoading: false });
-      }
-    });
+    const { getAllBooks } = this.props;
+    getAllBooks();
   }
 
   renderBook = ({ item }) => <Book data={item} {...this.props} />;
@@ -27,7 +17,7 @@ class LibraryContainer extends Component {
   keyExtractor = item => item.id.toString();
 
   render() {
-    const { books, error, isLoading } = this.state;
+    const { books, error, isLoading } = this.props;
     return (
       <Library
         data={books}
@@ -41,7 +31,21 @@ class LibraryContainer extends Component {
 }
 
 LibraryContainer.propTypes = {
+  getAllBooks: PropTypes.func.isRequired,
   navigation: PropTypes.shape({ navigate: PropTypes.func })
 };
 
-export default LibraryContainer;
+const mapDispatchToProps = dispatch => ({
+  getAllBooks: () => dispatch(actionCreators.getAllBooks())
+});
+
+const mapStateToProps = state => ({
+  isLoading: state.books.isLoading,
+  error: state.books.error,
+  books: state.books.books
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LibraryContainer);

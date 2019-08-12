@@ -4,6 +4,7 @@ import {
   createNavigationReducer,
   createReactNavigationReduxMiddleware
 } from 'react-navigation-redux-helpers';
+import books from '@redux/Books/reducer';
 
 import Reactotron from '../config/reactotronConfig';
 import AppNavigator from '../navigation/AppNavigation';
@@ -11,6 +12,7 @@ import AppNavigator from '../navigation/AppNavigation';
 const navReducer = createNavigationReducer(AppNavigator);
 
 const reducers = combineReducers({
+  books,
   nav: navReducer
 });
 
