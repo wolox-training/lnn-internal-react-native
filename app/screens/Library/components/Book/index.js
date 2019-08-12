@@ -16,11 +16,11 @@ class Book extends Component {
 
   render() {
     const {
-      data: { title, author, image_url: imageUrl }
+      data: { title, author, image }
     } = this.props;
     return (
       <TouchableOpacity style={styles.bookContainer} onPress={this.handleBookClick}>
-        <Image style={styles.bookImage} source={imageUrl ? { uri: imageUrl } : defaultImg} />
+        <Image style={styles.bookImage} source={image ? { uri: image } : defaultImg} />
         <View>
           <Text style={styles.bookTitle}>{title}</Text>
           <Text style={styles.bookAuthor}>{author}</Text>
@@ -39,8 +39,7 @@ Book.defaultProps = {
   data: {
     title: 'Title not found',
     author: 'Author not found',
-    // eslint-disable-next-line camelcase
-    image_url: null
+    image: null
   }
 };
 
