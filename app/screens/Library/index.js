@@ -31,8 +31,11 @@ class LibraryContainer extends Component {
 }
 
 LibraryContainer.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   getAllBooks: PropTypes.func.isRequired,
-  navigation: PropTypes.shape({ navigate: PropTypes.func })
+  isLoading: PropTypes.bool.isRequired,
+  navigation: PropTypes.shape({ navigate: PropTypes.func }).isRequired,
+  error: PropTypes.string
 };
 
 const mapDispatchToProps = dispatch => ({
