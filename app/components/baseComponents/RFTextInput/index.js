@@ -6,7 +6,10 @@ import { black } from '@scss/colors';
 import { styles } from './styles';
 
 class RFTextInput extends PureComponent {
-  onChangeText = () => true;
+  handleOnChangeText = text => {
+    const { name, onTextChange } = this.props;
+    onTextChange(text, name);
+  };
 
   render() {
     const { placeholder, placeholderTextColor, secureTextEntry } = this.props;
@@ -17,6 +20,7 @@ class RFTextInput extends PureComponent {
           placeholder={placeholder}
           placeholderTextColor={placeholderTextColor}
           secureTextEntry={secureTextEntry}
+          onChangeText={this.handleOnChangeText}
         />
       </View>
     );
@@ -24,7 +28,9 @@ class RFTextInput extends PureComponent {
 }
 
 RFTextInput.propTypes = {
+  name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
+  onTextChange: PropTypes.func.isRequired,
   placeholderTextColor: PropTypes.string,
   secureTextEntry: PropTypes.bool
 };

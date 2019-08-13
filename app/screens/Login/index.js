@@ -1,18 +1,47 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
+import { emailRegex, PASS_MIN_LENGHT } from './constants';
 import Login from './layout';
 
 class LoginContainer extends Component {
+  state = {
+    user: '',
+    pass: '',
+    error: ''
+  };
+
   onSubmit = () => {
     const {
       navigation: { navigate }
     } = this.props;
+    const { user, pass } = this.state;
+
+    if (user === '' || pass === '') {
+      this.setState({ error: 'Debe completar usuario y contraseña' });
+      return;
+    }
+
+    if (user !== '' && !emailRegex.test(user)) {
+      this.setState({ error: 'Formato de cuenta incorrecto' });
+      return;
+    }
+
+    if (pass !== '' && pass.length < PASS_MIN_LENGHT) {
+      this.setState({ error: 'La contraseña debe contener al menos 8 caracteres' });
+      return;
+    }
+
     navigate('tab');
   };
 
+  handleOnTextChange = (text, name) => {
+    this.setState({ [name]: text });
+  };
+
   render() {
-    return <Login handleOnSubmit={this.onSubmit} />;
+    const { error } = this.state;
+    return <Login handleOnSubmit={this.onSubmit} onTextChange={this.handleOnTextChange} error={error} />;
   }
 }
 

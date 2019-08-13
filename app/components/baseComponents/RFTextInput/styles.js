@@ -3,7 +3,6 @@ import { white } from '@scss/colors';
 
 export const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 50,
     marginVertical: 5
   },
   textInput: {

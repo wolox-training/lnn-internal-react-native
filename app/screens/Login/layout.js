@@ -9,14 +9,26 @@ import { white } from '@scss/colors';
 import SubmitButton from './components/SubmitButton';
 import { styles } from './styles';
 
-function Login({ handleOnSubmit }) {
+function Login({ handleOnSubmit, onTextChange, error }) {
   return (
     <ImageBackground source={imgBackground} style={styles.imageBackground}>
       <View style={styles.middleContainer}>
         <Image source={imgLogo} />
         <View style={styles.textInputContainer}>
-          <RFTextInput placeholder="Ingrese usuario..." placeholderTextColor={white} />
-          <RFTextInput placeholder="Ingrese contraseña..." placeholderTextColor={white} secureTextEntry />
+          <RFTextInput
+            name="user"
+            placeholder="Ingrese usuario..."
+            placeholderTextColor={white}
+            onTextChange={onTextChange}
+          />
+          <RFTextInput
+            name="pass"
+            placeholder="Ingrese contraseña..."
+            placeholderTextColor={white}
+            onTextChange={onTextChange}
+            secureTextEntry
+          />
+          {error !== '' && <Text style={styles.errorText}>{error}</Text>}
         </View>
       </View>
       <SubmitButton onPress={handleOnSubmit} />
@@ -26,7 +38,9 @@ function Login({ handleOnSubmit }) {
 }
 
 Login.propTypes = {
-  handleOnSubmit: PropTypes.func.isRequired
+  error: PropTypes.string.isRequired,
+  handleOnSubmit: PropTypes.func.isRequired,
+  onTextChange: PropTypes.func.isRequired
 };
 
 export default Login;
