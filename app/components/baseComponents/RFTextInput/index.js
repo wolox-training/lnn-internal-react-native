@@ -14,15 +14,13 @@ class RFTextInput extends PureComponent {
   render() {
     const { placeholder, placeholderTextColor, secureTextEntry } = this.props;
     return (
-      <View style={styles.container}>
-        <TextInput
-          style={styles.textInput}
-          placeholder={placeholder}
-          placeholderTextColor={placeholderTextColor}
-          secureTextEntry={secureTextEntry}
-          onChangeText={this.handleOnChangeText}
-        />
-      </View>
+      <TextInput
+        style={styles.textInput}
+        placeholder={placeholder}
+        placeholderTextColor={placeholderTextColor}
+        secureTextEntry={secureTextEntry}
+        onChangeText={this.handleOnChangeText}
+      />
     );
   }
 }
