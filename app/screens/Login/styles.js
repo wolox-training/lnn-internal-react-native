@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   },
   textInputContainer: {
-    width: '100%',
+    width: '80%',
     marginTop: 30
   },
   footerText: {
