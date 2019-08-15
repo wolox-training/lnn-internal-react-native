@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import actionCreators from '@redux/Books/actions';
+import withLoading from '@hocs/WithLoading';
 
 import Library from './layout';
 import Book from './components/Book';
 
+const LibraryWithLoading = withLoading(Library);
 class LibraryContainer extends Component {
   componentDidMount() {
     const { getAllBooks } = this.props;
@@ -19,7 +21,7 @@ class LibraryContainer extends Component {
   render() {
     const { books, error, isLoading } = this.props;
     return (
-      <Library
+      <LibraryWithLoading
         data={books}
         renderBook={this.renderBook}
         keyExtractor={this.keyExtractor}

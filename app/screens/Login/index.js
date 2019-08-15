@@ -48,7 +48,7 @@ class LoginContainer extends Component {
 
   render() {
     const { error } = this.state;
-    const { loginError, loggedIn } = this.props;
+    const { loginError, loggedIn, isLoading } = this.props;
 
     if (loggedIn) {
       this.props.navigation.navigate('tab');
@@ -59,12 +59,14 @@ class LoginContainer extends Component {
         handleOnSubmit={this.onSubmit}
         onTextChange={this.handleOnTextChange}
         error={error || loginError}
+        isLoading={isLoading}
       />
     );
   }
 }
 
 LoginContainer.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
   login: PropTypes.func.isRequired,
   loggedIn: PropTypes.bool,
   loginError: PropTypes.string,
@@ -77,7 +79,8 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   loginError: state.login.loginError,
-  loggedIn: state.login.loggedIn
+  loggedIn: state.login.loggedIn,
+  isLoading: state.login.isLoading
 });
 
 export default connect(
