@@ -1,9 +1,12 @@
 import { create } from 'apisauce';
 import Config from 'react-native-config';
 
-const api = create({
+export const api = create({
   baseURL: Config.API_BASE_URL,
   timeout: 5000
 });
 
-export default api;
+export const loginApi = create({
+  baseURL: 'https://wolox-training-rails.herokuapp.com/api/v1', //Config.LOGIN_API_BASE_URL,
+  timeout: 5000
+});

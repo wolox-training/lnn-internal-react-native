@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
+import actionCreators from '@redux/Login/actions';
 
 import { emailRegex, PASS_MIN_LENGHT } from './constants';
 import Login from './layout';
@@ -13,7 +15,8 @@ class LoginContainer extends Component {
 
   onSubmit = () => {
     const {
-      navigation: { navigate }
+      navigation: { navigate },
+      login
     } = this.props;
     const { user, pass } = this.state;
 
@@ -32,7 +35,11 @@ class LoginContainer extends Component {
       return;
     }
 
-    navigate('tab');
+    this.setState({ error: '' });
+
+    if (login(user, pass)) {
+      navigate('tab');
+    }
   };
 
   handleOnTextChange = (text, name) => {
@@ -41,12 +48,39 @@ class LoginContainer extends Component {
 
   render() {
     const { error } = this.state;
-    return <Login handleOnSubmit={this.onSubmit} onTextChange={this.handleOnTextChange} error={error} />;
+    const { loginError, loggedIn } = this.props;
+
+    if (loggedIn) {
+      this.props.navigation.navigate('tab');
+    }
+
+    return (
+      <Login
+        handleOnSubmit={this.onSubmit}
+        onTextChange={this.handleOnTextChange}
+        error={error || loginError}
+      />
+    );
   }
 }
 
 LoginContainer.propTypes = {
+  login: PropTypes.func.isRequired,
+  loggedIn: PropTypes.bool,
+  loginError: PropTypes.string,
   navigation: PropTypes.shape({ navigate: PropTypes.func })
 };
 
-export default LoginContainer;
+const mapDispatchToProps = dispatch => ({
+  login: (user, pass) => dispatch(actionCreators.login(user, pass))
+});
+
+const mapStateToProps = state => ({
+  loginError: state.login.loginError,
+  loggedIn: state.login.loggedIn
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginContainer);
