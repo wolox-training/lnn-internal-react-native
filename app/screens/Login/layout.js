@@ -38,9 +38,9 @@ function Login({ handleOnSubmit, onTextChange, error }) {
 }
 
 Login.propTypes = {
-  error: PropTypes.string.isRequired,
   handleOnSubmit: PropTypes.func.isRequired,
-  onTextChange: PropTypes.func.isRequired
+  onTextChange: PropTypes.func.isRequired,
+  error: PropTypes.string
 };
 
 export default Login;
