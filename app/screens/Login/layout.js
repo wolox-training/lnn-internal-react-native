@@ -42,6 +42,7 @@ function Login({ handleOnSubmit, onTextChange, error, isLoading }) {
 
 Login.propTypes = {
   handleOnSubmit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
   onTextChange: PropTypes.func.isRequired,
   error: PropTypes.string
 };
