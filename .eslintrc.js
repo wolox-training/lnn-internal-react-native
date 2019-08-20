@@ -1,4 +1,7 @@
 module.exports = {
-  root: true,
-  extends: '@react-native-community',
+  extends: ['wolox-react'],
+  rules: {
+    'import/no-unresolved': 'off',
+    'import/no-extraneous-dependencies': 'off'
+  }
 };
