@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { View, Text, Image } from 'react-native';
-import defaultImg from '@assets/no_image';
+import defaultImg from '@assets/no_image.jpeg'; // eslint-disable-line import/extensions
 import { lightBlue, white } from '@scss/colors';
 import Button from '@app/components/baseComponents/Button';
 import { bookDataPropType } from '@propTypes/BookDataPropType';
