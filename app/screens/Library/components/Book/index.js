@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 // eslint-disable-next-line import/extensions
 import defaultImg from '@assets/no_image.jpeg';
+import { bookDataPropType } from '@propTypes/BookDataPropType';
 
 import { styles } from './styles';
-
-import { bookDataPropType } from '@propTypes';
 
 class Book extends Component {
   handleBookClick = () => {

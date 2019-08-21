@@ -1,14 +1,12 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { View, Text, Image } from 'react-native';
-// eslint-disable-next-line import/extensions
-import defaultImg from '@assets/no_image.jpeg';
+import defaultImg from '@assets/no_image';
 import { lightBlue, white } from '@scss/colors';
 import Button from '@app/components/baseComponents/Button';
+import { bookDataPropType } from '@propTypes/BookDataPropType';
 
 import { styles } from './style';
-
-import { bookDataPropType } from '@propTypes';
 
 function BookDetailOptions({ data: { title, author, year, genre, image } }) {
   return (
