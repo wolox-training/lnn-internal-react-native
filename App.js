@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { Provider, connect } from 'react-redux';
 import { createReduxContainer } from 'react-navigation-redux-helpers';
 
@@ -13,12 +13,18 @@ const mapStateToProps = state => ({
 
 const AppWithNavigationState = connect(mapStateToProps)(AppWithNavigation);
 
-const App = () => {
-  return (
-    <Provider store={store}>
-      <AppWithNavigationState />
-    </Provider>
-  );
-};
+class App extends PureComponent {
+  componentDidMount() {
+    // TODO: get session data from store
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <AppWithNavigationState />
+      </Provider>
+    );
+  }
+}
 
 export default App;

@@ -48,10 +48,15 @@ class LoginContainer extends Component {
 
   render() {
     const { error } = this.state;
-    const { loginError, loggedIn, isLoading } = this.props;
+    const {
+      navigation: { navigate },
+      loginError,
+      loggedIn,
+      isLoading
+    } = this.props;
 
     if (loggedIn) {
-      this.props.navigation.navigate('tab');
+      navigate('tab');
     }
 
     return (
