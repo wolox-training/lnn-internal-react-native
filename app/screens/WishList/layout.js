@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, FlatList } from 'react-native';
+import { bookDataPropType } from '@propTypes/BookDataPropType';
 
 import { styles } from './styles';
-
-import { bookDataPropType } from '@propTypes';
 
 function Wishlist({ books, renderItem }) {
   return (
