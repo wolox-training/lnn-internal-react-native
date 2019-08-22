@@ -61,13 +61,13 @@ const RootTab = createBottomTabNavigator(
 
 const LoginStack = createStackNavigator(
   {
-    login: { screen: LoginContainer }
+    [ROUTES.LOGIN]: {
+      screen: LoginContainer,
+      navigationOptions: screenNavOptions[ROUTES.LOGIN]
+    }
   },
   {
-    initialRouteName: 'login',
-    defaultNavigationOptions: {
-      header: null
-    }
+    initialRouteName: ROUTES.LOGIN
   }
 );
 
