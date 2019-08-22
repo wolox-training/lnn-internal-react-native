@@ -10,9 +10,3 @@ export const bookDataPropType = {
   year: PropTypes.string.isRequired,
   image: PropTypes.string
 };
-
-export const commentDataPropType = {
-  user_name: PropTypes.string.isRequired,
-  comment: PropTypes.string.isRequired,
-  image_url: PropTypes.string
-};

@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, FlatList, Text } from 'react-native';
+import { bookDataPropType } from '@propTypes/BookDataPropType';
 
 import { styles } from './styles';
-
-import { bookDataPropType } from '@propTypes';
 
 function Library({ data, renderBook, keyExtractor, error }) {
   return (

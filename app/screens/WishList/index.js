@@ -1,12 +1,11 @@
-/* eslint-disable react/prefer-stateless-function */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import Wishlist from './layout';
 import Book from './Book';
 
 import { DATA } from '@constants';
 
-class WishlistContainer extends Component {
+class WishlistContainer extends PureComponent {
   renderItem = ({ item }) => <Book data={item} />;
 
   render() {
