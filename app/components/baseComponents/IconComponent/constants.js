@@ -1,4 +1,4 @@
-import { ROUTES } from '@constants/routes';
+import { ROUTES } from '@config/screens';
 
 export const DEFAULT_ROUTE_ICON = 'circle';
 
