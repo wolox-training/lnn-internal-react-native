@@ -4,10 +4,9 @@ import { Text, View, Image } from 'react-native';
 // provisory
 import imgTest1 from '@assets/img_user1.png';
 import imgTest2 from '@assets/img_user2.png';
+import { commentDataPropType } from '@propTypes/CommentDataPropType';
 
 import { styles } from './styles';
-
-import { commentDataPropType } from '@propTypes';
 
 // provisory
 const imgTest = [imgTest1, imgTest2];
