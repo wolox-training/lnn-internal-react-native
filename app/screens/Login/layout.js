@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ImageBackground, Image, View, Text } from 'react-native';
-import imgBackground from '@assets/bc_inicio.png';
+import { Image, View, Text } from 'react-native';
+import ImageBackground from '@app/components/ImageBackground';
 import imgLogo from '@assets/logo.png';
 import withLoading from '@hocs/WithLoading';
 import RFTextInput from '@app/components/baseComponents/RFTextInput';
@@ -14,7 +14,7 @@ const SubmitButtonWithLoading = withLoading(SubmitButton);
 
 function Login({ handleOnSubmit, onTextChange, error, isLoading }) {
   return (
-    <ImageBackground source={imgBackground} style={styles.imageBackground}>
+    <ImageBackground>
       <View style={styles.middleContainer}>
         <Image source={imgLogo} />
         <View style={styles.textInputContainer}>
