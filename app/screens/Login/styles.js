@@ -20,5 +20,11 @@ export const styles = StyleSheet.create({
   errorText: {
     color: red,
     fontSize: 12
+  },
+  imageBackground: {
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'space-around'
   }
 });
