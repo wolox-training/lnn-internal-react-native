@@ -18,7 +18,17 @@ export async function getStoreData(key) {
   }
 }
 
+export async function removeItem(key) {
+  try {
+    await AsyncStorage.removeItem(key);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
 export default {
   getStoreData,
-  setStoreData
+  setStoreData,
+  removeItem
 };

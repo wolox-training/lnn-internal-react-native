@@ -20,7 +20,11 @@ class LoadingScreen extends Component {
           loggedIn: true,
           loading: false
         });
+        return;
       }
+      this.setState({
+        loading: false
+      });
     });
   }
 
