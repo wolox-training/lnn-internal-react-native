@@ -1,51 +1,40 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { ROUTES } from '@config/screens';
+import { screenNavOptions } from '@config/navigation';
 
-import { white, lightBlue, gray } from '../scss/colors';
+import { lightBlue, gray } from '../scss/colors';
 import IconComponent from '../app/components/baseComponents/IconComponent';
 import LibraryContainer from '../app/screens/Library/index';
 import BookDetailContainer from '../app/screens/BookDetail/index';
 import WishlistContainer from '../app/screens/WishList';
-import { ROUTES_TITLES } from '../constants/routes';
-
-import ImageHeader from './components/ImageHeader';
-import BackButtonHeader from './components/BackButtonHeader';
 
 const LibraryStack = createStackNavigator(
   {
-    library: { screen: LibraryContainer },
-    bookDetail: { screen: BookDetailContainer }
+    [ROUTES.LIBRARY]: {
+      screen: LibraryContainer,
+      navigationOptions: screenNavOptions[ROUTES.LIBRARY]
+    },
+    [ROUTES.BOOKDETAIL]: {
+      screen: BookDetailContainer,
+      navigationOptions: screenNavOptions[ROUTES.BOOKDETAIL]
+    }
   },
   {
-    initialRouteName: 'library',
-    defaultNavigationOptions: ({ navigation }) => ({
-      headerBackground: <ImageHeader />,
-      headerTitleStyle: {
-        fontWeight: 'bold',
-        color: white
-      },
-      headerBackImage: BackButtonHeader,
-      headerTitle: ROUTES_TITLES[navigation.state.routeName]
-    })
+    initialRouteName: ROUTES.LIBRARY
   }
 );
 
 const WishlistStack = createStackNavigator(
   {
-    wishlist: { screen: WishlistContainer }
+    [ROUTES.WISHLIST]: {
+      screen: WishlistContainer,
+      navigationOptions: screenNavOptions[ROUTES.WISHLIST]
+    }
   },
   {
-    initialRouteName: 'wishlist',
-    defaultNavigationOptions: ({ navigation }) => ({
-      headerBackground: <ImageHeader />,
-      headerTitleStyle: {
-        fontWeight: 'bold',
-        color: white
-      },
-      headerBackImage: BackButtonHeader,
-      headerTitle: ROUTES_TITLES[navigation.state.routeName]
-    })
+    initialRouteName: ROUTES.WHISHLIST
   }
 );
 
@@ -70,4 +59,4 @@ const RootTab = createBottomTabNavigator(
   }
 );
 
-export default createAppContainer(RootTab);
+export default RootTab;
