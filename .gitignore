@@ -60,3 +60,4 @@ buck-out/
 
 .env
 yarn.lock
+pull_request_template.md
