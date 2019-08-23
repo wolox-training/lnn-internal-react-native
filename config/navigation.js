@@ -3,6 +3,7 @@ import { ROUTES, ROUTES_TITLES } from '@config/screens';
 import { white } from '@scss/colors';
 import ImageHeader from '@app/components/navigationComponents/ImageHeader';
 import BackButtonHeader from '@app/components/navigationComponents/BackButtonHeader';
+import LogoutButton from '@app/components/navigationComponents/LogoutButton';
 
 export const screenNavOptions = {
   [ROUTES.LOADING_SCREEN]: {
@@ -18,6 +19,7 @@ export const screenNavOptions = {
       color: white
     },
     headerBackImage: BackButtonHeader,
+    headerRight: <LogoutButton />,
     headerTitle: ROUTES_TITLES[ROUTES.LIBRARY]
   },
   [ROUTES.WISHLIST]: {
