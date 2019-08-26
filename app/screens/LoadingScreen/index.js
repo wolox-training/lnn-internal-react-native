@@ -7,6 +7,8 @@ import LocalStorageService from '@services/LocalStorageService';
 
 import { styles } from './styles';
 
+import { SESSION_DATA } from '@constants';
+
 class LoadingScreen extends Component {
   state = {
     loggedIn: false,
@@ -14,7 +16,7 @@ class LoadingScreen extends Component {
   };
 
   componentDidMount() {
-    LocalStorageService.getStoreData('access-token').then(res => {
+    LocalStorageService.getStoreData(SESSION_DATA.ACCESS_TOKEN).then(res => {
       if (res) {
         this.setState({
           loggedIn: true,
