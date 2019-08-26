@@ -15,8 +15,8 @@ function Login({ handleOnSubmit }) {
       <View style={styles.middleContainer}>
         <Image source={imgLogo} />
         <View style={styles.textInputContainer}>
-          <RFTextInput placeholder="Ingrese usuario..." placeholderTextColor={white} />
-          <RFTextInput placeholder="Ingrese contraseña..." placeholderTextColor={white} secureTextEntry />
+          <RFTextInput placeholder="Ingrese usuario..." />
+          <RFTextInput placeholder="Ingrese contraseña..." secureTextEntry />
         </View>
       </View>
       <SubmitButton onPress={handleOnSubmit} />
