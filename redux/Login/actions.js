@@ -13,13 +13,13 @@ const login = (user, pass) => dispatch => {
     if (!res.ok) {
       return dispatch({ type: actionTypes.LOGIN_FAILURE, res });
     }
-    dispatch({ type: actionTypes.LOGIN_SUCCESS, res });
-    const accessToken = res.headers['access-token'];
-    const client = ['client', res.headers.client];
-    const uid = ['uid', res.headers.uid];
-    LocalStorageService.setStoreData('access-token', accessToken);
-    LocalStorageService.setStoreData('client', client);
-    return LocalStorageService.setStoreData('uid', uid);
+    const sessionData = {
+      accessToken: res.headers['access-token'],
+      client: res.headers.client,
+      uid: res.headers.uid
+    };
+    dispatch({ type: actionTypes.LOGIN_SUCCESS, sessionData });
+    return LocalStorageService.setStoreData('access-token', sessionData.accessToken);
   });
 };
 
