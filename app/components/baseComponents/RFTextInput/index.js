@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { TextInput, View } from 'react-native';
-import { black } from '@scss/colors';
+import { TextInput } from 'react-native';
+import { white } from '@scss/colors';
 
 import { styles } from './styles';
 
@@ -31,11 +31,12 @@ RFTextInput.propTypes = {
   placeholder: PropTypes.string.isRequired,
   onTextChange: PropTypes.func.isRequired,
   placeholderTextColor: PropTypes.string,
-  secureTextEntry: PropTypes.bool
+  secureTextEntry: PropTypes.bool,
+  value: PropTypes.string
 };
 
 RFTextInput.defaultProps = {
-  placeholderTextColor: black,
+  placeholderTextColor: white,
   secureTextEntry: false
 };
 
