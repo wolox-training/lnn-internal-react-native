@@ -5,7 +5,6 @@ import imgBackground from '@assets/bc_inicio.png';
 import imgLogo from '@assets/logo.png';
 import withLoading from '@hocs/WithLoading';
 import RFTextInput from '@app/components/baseComponents/RFTextInput';
-import { white } from '@scss/colors';
 
 import SubmitButton from './components/SubmitButton';
 import { styles } from './styles';

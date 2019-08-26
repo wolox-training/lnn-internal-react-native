@@ -31,7 +31,8 @@ RFTextInput.propTypes = {
   placeholder: PropTypes.string.isRequired,
   onTextChange: PropTypes.func.isRequired,
   placeholderTextColor: PropTypes.string,
-  secureTextEntry: PropTypes.bool
+  secureTextEntry: PropTypes.bool,
+  value: PropTypes.string
 };
 
 RFTextInput.defaultProps = {
