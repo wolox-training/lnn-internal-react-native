@@ -1,7 +1,8 @@
 export const ROUTES = {
   LIBRARY: 'library',
   WISHLIST: 'wishlist',
-  BOOKDETAIL: 'bookDetail'
+  BOOKDETAIL: 'bookDetail',
+  LOGIN: 'login'
 };
 
 export const ROUTES_TITLES = {

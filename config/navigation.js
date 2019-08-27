@@ -31,5 +31,8 @@ export const screenNavOptions = {
     },
     headerBackImage: BackButtonHeader,
     headerTitle: ROUTES_TITLES[ROUTES.BOOKDETAIL]
+  },
+  [ROUTES.LOGIN]: {
+    header: null
   }
 };
