@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, FlatList, Text } from 'react-native';
-import { bookDataPropType } from '@propTypes/BookDataPropType';
+import { bookDataPropTypes } from '@propTypes/BookDataPropTypes';
 
 import { styles } from './styles';
 
@@ -19,7 +19,7 @@ function Library({ data, renderBook, keyExtractor, error }) {
 }
 
 Library.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape(bookDataPropType)).isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape(bookDataPropTypes)).isRequired,
   keyExtractor: PropTypes.func.isRequired,
   renderBook: PropTypes.func.isRequired,
   error: PropTypes.string
