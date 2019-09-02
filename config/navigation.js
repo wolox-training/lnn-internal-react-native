@@ -19,7 +19,7 @@ export const screenNavOptions = {
       color: white
     },
     headerBackImage: BackButtonHeader,
-    headerRight: <LogoutButton />,
+    headerLeft: <LogoutButton />,
     headerTitle: ROUTES_TITLES[ROUTES.LIBRARY]
   },
   [ROUTES.WISHLIST]: {
