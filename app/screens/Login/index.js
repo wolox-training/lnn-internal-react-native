@@ -18,12 +18,12 @@ class LoginContainer extends Component {
     const { user, pass } = this.state;
 
     if (user === '' || pass === '') {
-      this.setState({ error: 'Debe completar usuario y contraseña' });
+      this.setState({ error: 'Falta completar usario y/o contraseña' });
       return;
     }
 
     if (user !== '' && !emailRegex.test(user)) {
-      this.setState({ error: 'Formato de cuenta incorrecto' });
+      this.setState({ error: 'Email inválido' });
       return;
     }
 
