@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { red } from '@scss/colors';
 
 export const styles = StyleSheet.create({
   imageBackground: {
@@ -18,5 +19,12 @@ export const styles = StyleSheet.create({
   footerText: {
     position: 'absolute',
     bottom: 15
+  },
+  errorContainer: {
+    alignSelf: 'center'
+  },
+  errorText: {
+    color: red,
+    fontSize: 12
   }
 });

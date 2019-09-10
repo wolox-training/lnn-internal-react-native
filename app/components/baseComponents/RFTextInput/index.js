@@ -1,23 +1,34 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { TextInput } from 'react-native';
 import { white } from '@scss/colors';
 
 import { styles } from './styles';
 
-function RFTextInput({ placeholder, placeholderTextColor, secureTextEntry }) {
-  return (
-    <TextInput
-      style={styles.textInput}
-      placeholder={placeholder}
-      placeholderTextColor={placeholderTextColor}
-      secureTextEntry={secureTextEntry}
-    />
-  );
+class RFTextInput extends PureComponent {
+  handleOnChangeText = text => {
+    const { name, onTextChange } = this.props;
+    onTextChange(text, name);
+  };
+
+  render() {
+    const { placeholder, placeholderTextColor, secureTextEntry } = this.props;
+    return (
+      <TextInput
+        style={styles.textInput}
+        placeholder={placeholder}
+        placeholderTextColor={placeholderTextColor}
+        secureTextEntry={secureTextEntry}
+        onChangeText={this.handleOnChangeText}
+      />
+    );
+  }
 }
 
 RFTextInput.propTypes = {
+  name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
+  onTextChange: PropTypes.func.isRequired,
   placeholderTextColor: PropTypes.string,
   secureTextEntry: PropTypes.bool
 };
