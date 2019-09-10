@@ -3,7 +3,7 @@ import { Provider, connect } from 'react-redux';
 import { createReduxContainer } from 'react-navigation-redux-helpers';
 
 import RootTab from './navigation/AppNavigation';
-import { store } from './redux/store';
+import store from './redux/store';
 
 const AppWithNavigation = createReduxContainer(RootTab);
 

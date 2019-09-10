@@ -4,6 +4,7 @@ import {
   createNavigationReducer,
   createReactNavigationReduxMiddleware
 } from 'react-navigation-redux-helpers';
+import { fetchMiddleware } from 'redux-recompose';
 import books from '@redux/Books/reducer';
 import login from '@redux/Login/reducer';
 
@@ -18,12 +19,16 @@ const reducers = combineReducers({
   nav: navReducer
 });
 
-const middleware = createReactNavigationReduxMiddleware(state => state.nav);
+const navMiddleware = createReactNavigationReduxMiddleware(state => state.nav);
 
-export const store = createStore(
-  reducers,
-  compose(
-    applyMiddleware(middleware, thunk),
-    Reactotron.createEnhancer()
-  )
-);
+const middlewares = [thunk, navMiddleware, fetchMiddleware];
+const enhancers = [applyMiddleware(...middlewares)];
+
+// eslint-disable-next-line no-underscore-dangle
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const rootReducer = (state, action) => reducers(state, action);
+
+const store = createStore(rootReducer, composeEnhancers(...enhancers, Reactotron.createEnhancer()));
+
+export default store;
