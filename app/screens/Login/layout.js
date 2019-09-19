@@ -17,7 +17,12 @@ function Login({ handleOnSubmit, onTextChange, error, isLoading }) {
       <View style={styles.middleContainer}>
         <Image source={imgLogo} />
         <View style={styles.textInputContainer}>
-          <RFTextInput name="user" placeholder="Ingrese usuario..." onTextChange={onTextChange} />
+          <RFTextInput
+            name="user"
+            placeholder="Ingrese usuario..."
+            onTextChange={onTextChange}
+            keyboardType="email-address"
+          />
           <RFTextInput
             name="pass"
             placeholder="Ingrese contraseña..."
