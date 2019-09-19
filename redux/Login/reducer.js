@@ -2,36 +2,34 @@ import { actionTypes } from './actions';
 
 const initialState = {
   isLoading: false,
-  loggedIn: false,
   accessToken: '',
   client: '',
   uid: '',
-  loginError: null
+  error: null
 };
 
 function reducer(state = initialState, action) {
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case actionTypes.LOGIN:
       return {
         ...state,
         isLoading: true,
-        loginError: null
+        error: null
       };
     case actionTypes.LOGIN_SUCCESS:
       return {
         ...state,
-        accessToken: action.res.headers['access-token'],
-        client: action.res.headers.client,
-        uid: action.res.headers.uid,
-        isLoading: false,
-        loggedIn: true
+        accessToken: payload.headers['access-token'],
+        client: payload.headers.client,
+        uid: payload.headers.uid,
+        isLoading: false
       };
     case actionTypes.LOGIN_FAILURE:
       return {
         ...state,
-        loginError: action.res.data.errors[0],
-        isLoading: false,
-        loggedIn: false
+        error: payload.data.errors[0],
+        isLoading: false
       };
     default:
       return { ...state };

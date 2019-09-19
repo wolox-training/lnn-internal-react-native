@@ -5,7 +5,6 @@ import imgBackground from '@assets/bc_inicio.png';
 import imgLogo from '@assets/logo.png';
 import withLoading from '@hocs/WithLoading';
 import RFTextInput from '@app/components/baseComponents/RFTextInput';
-import { white } from '@scss/colors';
 
 import SubmitButton from './components/SubmitButton';
 import { styles } from './styles';
@@ -18,7 +17,12 @@ function Login({ handleOnSubmit, onTextChange, error, isLoading }) {
       <View style={styles.middleContainer}>
         <Image source={imgLogo} />
         <View style={styles.textInputContainer}>
-          <RFTextInput name="user" placeholder="Ingrese usuario..." onTextChange={onTextChange} />
+          <RFTextInput
+            name="user"
+            placeholder="Ingrese usuario..."
+            onTextChange={onTextChange}
+            keyboardType="email-address"
+          />
           <RFTextInput
             name="pass"
             placeholder="Ingrese contraseña..."
