@@ -14,7 +14,8 @@ module.exports = {
           '@redux': './redux',
           '@scss': './scss',
           '@services': './services',
-          '@utils': './utils'
+          '@utils': './utils',
+          '@hocs': './hocs'
         }
       }
     ]

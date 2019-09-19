@@ -1,18 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, FlatList, ActivityIndicator, Text } from 'react-native';
+import { View, FlatList, Text } from 'react-native';
 import { bookDataPropType } from '@propTypes/BookDataPropType';
 
 import { styles } from './styles';
 
-function Library({ data, renderBook, keyExtractor, error, isLoading }) {
+function Library({ data, renderBook, keyExtractor, error }) {
   return (
     <View style={styles.container}>
-      {isLoading ? (
-        <ActivityIndicator />
-      ) : (
-        <FlatList data={data} renderItem={renderBook} keyExtractor={keyExtractor} />
-      )}
+      <FlatList data={data} renderItem={renderBook} keyExtractor={keyExtractor} />
       {error !== '' && (
         <View style={styles.errorTextContainer}>
           <Text>{error}</Text>
@@ -24,7 +20,6 @@ function Library({ data, renderBook, keyExtractor, error, isLoading }) {
 
 Library.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape(bookDataPropType)).isRequired,
-  isLoading: PropTypes.bool.isRequired,
   keyExtractor: PropTypes.func.isRequired,
   renderBook: PropTypes.func.isRequired,
   error: PropTypes.string

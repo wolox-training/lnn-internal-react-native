@@ -32,19 +32,21 @@ class LoginContainer extends Component {
 
   render() {
     const { error } = this.state;
-    const { loginError } = this.props;
+    const { isLoading, loginError } = this.props;
 
     return (
       <Login
         handleOnSubmit={this.onSubmit}
         onTextChange={this.handleOnTextChange}
         error={error || loginError}
+        isLoading={isLoading}
       />
     );
   }
 }
 
 LoginContainer.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
   login: PropTypes.func.isRequired,
   loginError: PropTypes.string,
   navigation: PropTypes.shape({ navigate: PropTypes.func })
@@ -55,7 +57,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  loginError: state.login.error
+  loginError: state.login.loginError,
+  isLoading: state.login.isLoading
 });
 
 export default connect(
