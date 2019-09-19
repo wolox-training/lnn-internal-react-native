@@ -1,4 +1,6 @@
+import { NavigationActions } from 'react-navigation';
 import LoginService from '@services/LoginService';
+import { ROUTES } from '@config/screens';
 
 export const actionTypes = {
   LOGIN: 'LOGIN',
@@ -9,10 +11,11 @@ export const actionTypes = {
 const login = (user, pass) => dispatch => {
   dispatch({ type: actionTypes.LOGIN });
   LoginService.login(user, pass).then(res => {
-    if (!res.ok) {
-      return dispatch({ type: actionTypes.LOGIN_FAILURE, res });
+    if (res.ok) {
+      dispatch({ type: actionTypes.LOGIN_SUCCESS, payload: res });
+      return dispatch(NavigationActions.navigate({ routeName: ROUTES.LIBRARY }));
     }
-    return dispatch({ type: actionTypes.LOGIN_SUCCESS, res });
+    return dispatch({ type: actionTypes.LOGIN_FAILURE, payload: res });
   });
 };
 
