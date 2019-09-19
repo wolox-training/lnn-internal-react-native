@@ -2,42 +2,40 @@ import { actionTypes } from './actions';
 
 const initialState = {
   isLoading: false,
-  loggedIn: false,
   accessToken: '',
   client: '',
   uid: '',
-  loginError: null
+  error: null
 };
 
 function reducer(state = initialState, action) {
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case actionTypes.LOGIN:
       return {
         ...state,
         isLoading: true,
-        loginError: null
+        error: null
       };
     case actionTypes.LOGIN_SUCCESS:
       return {
         ...state,
-        accessToken: action.sessionData.accessToken,
-        client: action.sessionData.client,
-        uid: action.sessionData.uid,
-        isLoading: false,
-        loggedIn: true
+        accessToken: payload.accessToken,
+        client: payload.client,
+        uid: payload.uid,
+        isLoading: false
       };
     case actionTypes.LOGIN_FAILURE:
       return {
         ...state,
-        loginError: action.res.data.errors[0],
-        isLoading: false,
-        loggedIn: false
+        error: payload.data.errors[0],
+        isLoading: false
       };
     case actionTypes.LOGOUT:
       return {
         ...state,
         isLoading: true,
-        loginError: null
+        error: null
       };
     case actionTypes.LOGOUT_SUCCESS:
       return {
@@ -45,8 +43,7 @@ function reducer(state = initialState, action) {
         accessToken: null,
         client: null,
         uid: null,
-        isLoading: false,
-        loggedIn: false
+        isLoading: false
       };
     case actionTypes.LOGOUT_FAILURE:
       return {

@@ -1,5 +1,7 @@
+import { NavigationActions } from 'react-navigation';
 import LoginService from '@services/LoginService';
 import LocalStorageService from '@services/LocalStorageService';
+import { ROUTES } from '@config/screens';
 
 import { SESSION_DATA } from '@constants';
 
@@ -15,19 +17,19 @@ export const actionTypes = {
 const login = (user, pass) => dispatch => {
   dispatch({ type: actionTypes.LOGIN });
   LoginService.login(user, pass).then(res => {
-    if (!res.ok) {
-      return dispatch({ type: actionTypes.LOGIN_FAILURE, res });
+    if (res.ok) {
+      const sessionData = {
+        accessToken: res.headers['access-token'],
+        client: res.headers.client,
+        uid: res.headers.uid
+      };
+      LocalStorageService.setStoreData(SESSION_DATA.ACCESS_TOKEN, sessionData.accessToken);
+      LocalStorageService.setStoreData(SESSION_DATA.CLIENT, sessionData.client);
+      LocalStorageService.setStoreData(SESSION_DATA.UID, sessionData.uid);
+      dispatch({ type: actionTypes.LOGIN_SUCCESS, payload: sessionData });
+      return dispatch(NavigationActions.navigate({ routeName: ROUTES.LIBRARY }));
     }
-    const sessionData = {
-      accessToken: res.headers['access-token'],
-      client: res.headers.client,
-      uid: res.headers.uid
-    };
-    dispatch({ type: actionTypes.LOGIN_SUCCESS, sessionData });
-    LocalStorageService.setStoreData(SESSION_DATA.ACCESS_TOKEN, sessionData.accessToken);
-    LocalStorageService.setStoreData(SESSION_DATA.CLIENT, sessionData.client);
-    LocalStorageService.setStoreData(SESSION_DATA.UID, sessionData.uid);
-    return true;
+    return dispatch({ type: actionTypes.LOGIN_FAILURE, payload: res });
   });
 };
 
