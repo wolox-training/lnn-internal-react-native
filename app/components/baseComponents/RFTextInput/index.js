@@ -38,6 +38,7 @@ RFTextInput.propTypes = {
 };
 
 RFTextInput.defaultProps = {
+  keyboardType: 'default',
   placeholderTextColor: white,
   secureTextEntry: false
 };

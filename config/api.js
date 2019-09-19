@@ -7,6 +7,6 @@ export const api = create({
 });
 
 export const loginApi = create({
-  baseURL: 'https://wolox-training-rails.herokuapp.com/api/v1', //Config.LOGIN_API_BASE_URL,
+  baseURL: Config.LOGIN_API_BASE_URL,
   timeout: 5000
 });
