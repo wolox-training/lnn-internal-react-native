@@ -3,42 +3,26 @@ import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import actionCreators from '@redux/Login/actions';
 
-import { emailRegex, PASS_MIN_LENGHT } from './constants';
 import Login from './layout';
+import { validateLogin } from './utils';
 
 class LoginContainer extends Component {
   state = {
     user: '',
     pass: '',
-    error: ''
+    error: null
   };
 
   onSubmit = () => {
-    const {
-      navigation: { navigate },
-      login
-    } = this.props;
+    const { login } = this.props;
     const { user, pass } = this.state;
 
-    if (user === '' || pass === '') {
-      this.setState({ error: 'Falta completar usario y/o contraseña' });
-      return;
-    }
+    const err = validateLogin(user, pass);
 
-    if (user !== '' && !emailRegex.test(user)) {
-      this.setState({ error: 'Email inválido' });
-      return;
-    }
-
-    if (pass !== '' && pass.length < PASS_MIN_LENGHT) {
-      this.setState({ error: 'La contraseña debe contener al menos 8 caracteres' });
-      return;
-    }
-
-    this.setState({ error: '' });
-
-    if (login(user, pass)) {
-      navigate('tab');
+    if (err) {
+      this.setState({ error: err });
+    } else {
+      login(user, pass);
     }
   };
 
@@ -48,16 +32,7 @@ class LoginContainer extends Component {
 
   render() {
     const { error } = this.state;
-    const {
-      navigation: { navigate },
-      loginError,
-      loggedIn,
-      isLoading
-    } = this.props;
-
-    if (loggedIn) {
-      navigate('tab');
-    }
+    const { isLoading, loginError } = this.props;
 
     return (
       <Login
@@ -73,7 +48,6 @@ class LoginContainer extends Component {
 LoginContainer.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   login: PropTypes.func.isRequired,
-  loggedIn: PropTypes.bool,
   loginError: PropTypes.string,
   navigation: PropTypes.shape({ navigate: PropTypes.func })
 };
@@ -84,7 +58,6 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   loginError: state.login.loginError,
-  loggedIn: state.login.loggedIn,
   isLoading: state.login.isLoading
 });
 
