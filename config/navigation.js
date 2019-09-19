@@ -5,6 +5,7 @@ import { white } from '@scss/colors';
 import ImageHeader from '@app/components/navigationComponents/ImageHeader';
 import BackButtonHeader from '@app/components/navigationComponents/BackButtonHeader';
 import LogoutButton from '@app/components/navigationComponents/LogoutButton';
+import SearchButton from '@app/components/navigationComponents/SearchButton';
 import IconComponent from '@app/components/baseComponents/IconComponent';
 
 import { lightBlue, gray } from '../scss/colors';
@@ -24,7 +25,8 @@ export const screenNavOptions = {
     },
     headerBackImage: BackButtonHeader,
     headerLeft: <LogoutButton navigation={navigation} />,
-    headerTitle: ROUTES_TITLES[ROUTES.LIBRARY]
+    headerTitle: ROUTES_TITLES[ROUTES.LIBRARY],
+    headerRight: <SearchButton navigation={navigation} />
   }),
   [ROUTES.WISHLIST]: {
     headerBackground: <ImageHeader />,
