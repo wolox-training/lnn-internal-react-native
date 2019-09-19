@@ -3,7 +3,7 @@ import BookService from '@services/BookService';
 export const actionTypes = {
   GET_BOOKS: 'GET_BOOKS',
   GET_BOOKS_SUCCESS: 'GET_BOOKS_SUCCESS',
-  GET_BOOKS_FAILURE: 'GET_BOOKS_FAILURE',
+  GET_BOOKS_FAILURE: 'GET_BOOKS_FAILURE'
 };
 
 const getAllBooks = () => dispatch => {
