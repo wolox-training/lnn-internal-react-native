@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity, Text } from 'react-native';
+import withLoading from '@hocs/WithLoading';
 
 import { styles } from './styles';
 
@@ -23,4 +24,4 @@ SubmitButton.propTypes = {
   onPress: PropTypes.func.isRequired
 };
 
-export default SubmitButton;
+export default withLoading(SubmitButton);

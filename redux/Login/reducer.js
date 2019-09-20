@@ -20,18 +20,10 @@ function reducer(state = initialState, action) {
     case actionTypes.LOGIN_SUCCESS:
       return {
         ...state,
-<<<<<<< HEAD
-        accessToken: action.sessionData.accessToken,
-        client: action.sessionData.client,
-        uid: action.sessionData.uid,
-        isLoading: false,
-        loggedIn: true
-=======
-        accessToken: payload.headers['access-token'],
-        client: payload.headers.client,
-        uid: payload.headers.uid,
+        accessToken: payload.accessToken,
+        client: payload.client,
+        uid: payload.uid,
         isLoading: false
->>>>>>> login-hocs
       };
     case actionTypes.LOGIN_FAILURE:
       return {
