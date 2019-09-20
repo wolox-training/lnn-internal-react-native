@@ -7,7 +7,7 @@ class LoadingScreen extends PureComponent {
   componentDidMount() {
     LocalStorageService.getStoreData('access-token').then(res => {
       if (res) {
-        this.props.navigation.navigate(ROUTES.LOGIN);
+        this.props.navigation.navigate(ROUTES.LIBRARY);
       } else {
         this.props.navigation.navigate(ROUTES.LOGIN);
       }
