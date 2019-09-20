@@ -22,8 +22,7 @@ export const styles = StyleSheet.create({
     fontSize: 12
   },
   imageBackground: {
-    width: '100%',
-    height: '100%',
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around'
   }
