@@ -7,6 +7,7 @@ import BackButtonHeader from '@app/components/navigationComponents/BackButtonHea
 import LogoutButton from '@app/components/navigationComponents/LogoutButton';
 import SearchButton from '@app/components/navigationComponents/SearchButton';
 import IconComponent from '@app/components/baseComponents/IconComponent';
+import SearchHeader from '@app/screens/SearchLibrary/components/Header';
 
 import { lightBlue, gray } from '../scss/colors';
 
@@ -45,7 +46,10 @@ export const screenNavOptions = {
     },
     headerBackImage: BackButtonHeader,
     headerTitle: ROUTES_TITLES[ROUTES.BOOKDETAIL]
-  }
+  },
+  [ROUTES.SEARCH_LIBRARY]: ({ navigation }) => ({
+    header: <SearchHeader navigation={navigation} />
+  })
 };
 
 export const bottomTabDefaultOptions = ({ navigation }) => ({

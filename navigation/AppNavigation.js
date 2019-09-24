@@ -16,7 +16,8 @@ const LibraryStack = createStackNavigator(
       navigationOptions: screenNavOptions[ROUTES.LIBRARY]
     },
     [ROUTES.SEARCH_LIBRARY]: {
-      screen: SearchLibrary
+      screen: SearchLibrary,
+      navigationOptions: screenNavOptions[ROUTES.SEARCH_LIBRARY]
     },
     [ROUTES.BOOKDETAIL]: {
       screen: BookDetailContainer,
