@@ -30,6 +30,8 @@ target 'WBooks' do
 
   pod 'react-native-config', :path => '../node_modules/react-native-config'
 
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
   target 'WBooksTests' do
     inherit! :search_paths
     # Pods for testing

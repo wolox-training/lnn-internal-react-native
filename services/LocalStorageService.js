@@ -1,4 +1,4 @@
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export async function setStoreData(key, value) {
   try {
@@ -26,9 +26,3 @@ export async function removeItem(key) {
     return false;
   }
 }
-
-export default {
-  getStoreData,
-  setStoreData,
-  removeItem
-};
