@@ -5,11 +5,14 @@ import { ROUTES } from '@config/screens';
 
 class LoadingScreen extends PureComponent {
   componentDidMount() {
-    LocalStorageService.getStoreData('access-token').then(res => {
+    const {
+      navigation: { navigate }
+    } = this.props;
+    LocalStorageService.getAccessToken().then(res => {
       if (res) {
-        this.props.navigation.navigate(ROUTES.LIBRARY);
+        navigate(ROUTES.LIBRARY);
       } else {
-        this.props.navigation.navigate(ROUTES.LOGIN);
+        navigate(ROUTES.LOGIN);
       }
     });
   }
