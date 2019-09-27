@@ -6,7 +6,8 @@ export const setAccessToken = async value => {
 };
 
 export const getAccessToken = async () => {
-  await AsyncStorage.getItem(ACCESS_TOKEN);
+  const value = await AsyncStorage.getItem(ACCESS_TOKEN);
+  return value;
 };
 
 export const clear = async () => {

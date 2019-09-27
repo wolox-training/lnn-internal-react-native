@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import LocalStorageService from '@services/LocalStorageService';
+import { getAccessToken } from '@utils/asyncStorage';
 import { ROUTES } from '@config/screens';
 
 class LoadingScreen extends PureComponent {
@@ -8,7 +8,7 @@ class LoadingScreen extends PureComponent {
     const {
       navigation: { navigate }
     } = this.props;
-    LocalStorageService.getAccessToken().then(res => {
+    getAccessToken().then(res => {
       if (res) {
         navigate(ROUTES.LIBRARY);
       } else {
