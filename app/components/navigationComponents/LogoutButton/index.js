@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Image, TouchableOpacity, Alert } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { ROUTES as Routes } from '@config/screens';
 import actionCreators from '@redux/Login/actions';
@@ -9,14 +9,10 @@ import img from './assets/user.png';
 import { styles } from './styles';
 
 class LogoutButton extends PureComponent {
-  logout = () => {
+  handleOnPress = () => {
     const { navigation, logout } = this.props;
     logout();
     navigation.navigate(Routes.LOGIN);
-  };
-
-  handleOnPress = () => {
-    this.logout();
   };
 
   render() {
