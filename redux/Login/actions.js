@@ -1,6 +1,6 @@
 import { NavigationActions } from 'react-navigation';
 import LoginService from '@services/LoginService';
-import LocalStorageService from '@services/LocalStorageService';
+import { setAccessToken } from '@utils/asyncStorage';
 import { ROUTES } from '@config/screens';
 
 export const actionTypes = {
@@ -19,7 +19,7 @@ const login = (user, pass) => dispatch => {
         uid: res.headers.uid
       };
       dispatch({ type: actionTypes.LOGIN_SUCCESS, payload: sessionData });
-      LocalStorageService.setStoreData('access-token', sessionData.accessToken);
+      setAccessToken(sessionData.accessToken);
       return dispatch(NavigationActions.navigate({ routeName: ROUTES.LIBRARY }));
     }
     return dispatch({ type: actionTypes.LOGIN_FAILURE, payload: res });
