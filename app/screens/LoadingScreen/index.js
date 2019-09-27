@@ -1,17 +1,18 @@
 import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import LocalStorageService from '@services/LocalStorageService';
+import { getSessionData } from '@utils/asyncStorage';
 import { ROUTES } from '@config/screens';
-
-import { SESSION_DATA } from '@constants';
 
 class LoadingScreen extends PureComponent {
   componentDidMount() {
-    LocalStorageService.getStoreData(SESSION_DATA.ACCESS_TOKEN).then(res => {
+    const {
+      navigation: { navigate }
+    } = this.props;
+    getSessionData().then(res => {
       if (res) {
-        this.props.navigation.navigate(ROUTES.LIBRARY);
+        navigate(ROUTES.LIBRARY);
       } else {
-        this.props.navigation.navigate(ROUTES.LOGIN);
+        navigate(ROUTES.LOGIN);
       }
     });
   }

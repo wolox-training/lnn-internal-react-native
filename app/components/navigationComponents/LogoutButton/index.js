@@ -16,15 +16,7 @@ class LogoutButton extends PureComponent {
   };
 
   handleOnPress = () => {
-    Alert.alert('Atención!', '¿Desea cerrar sesión?', [
-      {
-        text: 'Si',
-        onPress: this.logout
-      },
-      {
-        text: 'No'
-      }
-    ]);
+    this.logout();
   };
 
   render() {
