@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native';
+import { HEADER_ICON_HEIGHT, HEADER_ICON_WIDTH } from '@constants/icons';
 
 export const styles = StyleSheet.create({
   image: {
-    width: 20,
-    height: 20
+    width: HEADER_ICON_WIDTH,
+    height: HEADER_ICON_HEIGHT
   }
 });
