@@ -1,9 +1,7 @@
 import { NavigationActions } from 'react-navigation';
 import LoginService from '@services/LoginService';
-import LocalStorageService from '@services/LocalStorageService';
+import { setSessionData, clearAll } from '@utils/asyncStorage';
 import { ROUTES } from '@config/screens';
-
-import { SESSION_DATA } from '@constants';
 
 export const actionTypes = {
   LOGIN: 'LOGIN',
@@ -23,10 +21,9 @@ const login = (user, pass) => dispatch => {
         client: res.headers.client,
         uid: res.headers.uid
       };
-      LocalStorageService.setStoreData(SESSION_DATA.ACCESS_TOKEN, sessionData.accessToken);
-      LocalStorageService.setStoreData(SESSION_DATA.CLIENT, sessionData.client);
-      LocalStorageService.setStoreData(SESSION_DATA.UID, sessionData.uid);
-      dispatch({ type: actionTypes.LOGIN_SUCCESS, payload: sessionData });
+      setSessionData(
+        `{ accessToken: ${sessionData.accessToken}, client: ${sessionData.client}, uid: ${sessionData.uid} }`
+      );
       return dispatch(NavigationActions.navigate({ routeName: ROUTES.LIBRARY }));
     }
     return dispatch({ type: actionTypes.LOGIN_FAILURE, payload: res });
@@ -35,9 +32,10 @@ const login = (user, pass) => dispatch => {
 
 const logout = () => dispatch => {
   dispatch({ type: actionTypes.LOGOUT });
-  LocalStorageService.removeItem(SESSION_DATA.ACCESS_TOKEN).then(res => {
+  clearAll().then(res => {
     if (res) {
-      return dispatch({ type: actionTypes.LOGOUT_SUCCESS });
+      dispatch({ type: actionTypes.LOGOUT_SUCCESS });
+      return dispatch(NavigationActions.navigate({ routeName: ROUTES.LOGIN }));
     }
     return dispatch({ type: actionTypes.LOGOUT_FAILURE });
   });

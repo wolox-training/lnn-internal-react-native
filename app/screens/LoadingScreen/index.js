@@ -1,54 +1,24 @@
-import React, { Component } from 'react';
+import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { ImageBackground, ActivityIndicator } from 'react-native';
-import imgBackground from '@assets/bc_inicio.png';
+import { getSessionData } from '@utils/asyncStorage';
 import { ROUTES } from '@config/screens';
-import LocalStorageService from '@services/LocalStorageService';
 
-import { styles } from './styles';
-
-import { SESSION_DATA } from '@constants';
-
-class LoadingScreen extends Component {
-  state = {
-    loggedIn: false,
-    loading: true
-  };
-
+class LoadingScreen extends PureComponent {
   componentDidMount() {
-    LocalStorageService.getStoreData(SESSION_DATA.ACCESS_TOKEN).then(res => {
-      if (res) {
-        this.setState({
-          loggedIn: true,
-          loading: false
-        });
-        return;
-      }
-      this.setState({
-        loading: false
-      });
-    });
-  }
-
-  render() {
-    const { loading, loggedIn } = this.state;
     const {
       navigation: { navigate }
     } = this.props;
-
-    if (!loading) {
-      if (loggedIn) {
+    getSessionData().then(res => {
+      if (res) {
         navigate(ROUTES.LIBRARY);
       } else {
         navigate(ROUTES.LOGIN);
       }
-    }
+    });
+  }
 
-    return (
-      <ImageBackground style={styles.imageBackground} source={imgBackground}>
-        <ActivityIndicator size="large" />
-      </ImageBackground>
-    );
+  render() {
+    return null;
   }
 }
 
