@@ -2,7 +2,8 @@ export const ROUTES = {
   LIBRARY: 'library',
   WISHLIST: 'wishlist',
   BOOKDETAIL: 'bookDetail',
-  LOGIN: 'login'
+  LOGIN: 'login',
+  LOADING_SCREEN: 'loadingScreen'
 };
 
 export const ROUTES_TITLES = {

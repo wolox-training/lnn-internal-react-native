@@ -10,6 +10,7 @@ import LibraryContainer from '../app/screens/Library/index';
 import BookDetailContainer from '../app/screens/BookDetail/index';
 import WishlistContainer from '../app/screens/WishList';
 import LoginContainer from '../app/screens/Login';
+import LoadingScreen from '../app/screens/LoadingScreen';
 
 const LibraryStack = createStackNavigator(
   {
@@ -61,23 +62,27 @@ const RootTab = createBottomTabNavigator(
 
 const LoginStack = createStackNavigator(
   {
+    [ROUTES.LOADING_SCREEN]: {
+      screen: LoadingScreen,
+      navigationOptions: screenNavOptions[ROUTES.LOADING_SCREEN]
+    },
     [ROUTES.LOGIN]: {
       screen: LoginContainer,
       navigationOptions: screenNavOptions[ROUTES.LOGIN]
     }
   },
   {
-    initialRouteName: ROUTES.LOGIN
+    initialRouteName: ROUTES.LOADING_SCREEN
   }
 );
 
 const AppNavigator = createStackNavigator(
   {
-    login: LoginStack,
+    loginStack: LoginStack,
     tab: RootTab
   },
   {
-    initialRouteName: 'login',
+    initialRouteName: 'loginStack',
     defaultNavigationOptions: {
       header: null
     }

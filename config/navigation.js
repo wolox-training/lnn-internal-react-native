@@ -5,6 +5,12 @@ import ImageHeader from '@app/components/navigationComponents/ImageHeader';
 import BackButtonHeader from '@app/components/navigationComponents/BackButtonHeader';
 
 export const screenNavOptions = {
+  [ROUTES.LOADING_SCREEN]: {
+    header: null
+  },
+  [ROUTES.LOGIN]: {
+    header: null
+  },
   [ROUTES.LIBRARY]: {
     headerBackground: <ImageHeader />,
     headerTitleStyle: {
@@ -31,8 +37,5 @@ export const screenNavOptions = {
     },
     headerBackImage: BackButtonHeader,
     headerTitle: ROUTES_TITLES[ROUTES.BOOKDETAIL]
-  },
-  [ROUTES.LOGIN]: {
-    header: null
   }
 };

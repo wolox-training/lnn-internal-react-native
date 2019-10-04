@@ -2,12 +2,6 @@ import { StyleSheet } from 'react-native';
 import { red } from '@scss/colors';
 
 export const styles = StyleSheet.create({
-  imageBackground: {
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'space-around'
-  },
   middleContainer: {
     width: '100%',
     alignItems: 'center'
@@ -26,5 +20,10 @@ export const styles = StyleSheet.create({
   errorText: {
     color: red,
     fontSize: 12
+  },
+  imageBackground: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-around'
   }
 });

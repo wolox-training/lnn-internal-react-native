@@ -1,19 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ImageBackground, Image, View, Text } from 'react-native';
+import { Image, View, Text, ImageBackground } from 'react-native';
 import imgBackground from '@assets/bc_inicio.png';
 import imgLogo from '@assets/logo.png';
-import withLoading from '@hocs/WithLoading';
 import RFTextInput from '@app/components/baseComponents/RFTextInput';
 
 import SubmitButton from './components/SubmitButton';
 import { styles } from './styles';
 
-const SubmitButtonWithLoading = withLoading(SubmitButton);
-
 function Login({ handleOnSubmit, onTextChange, error, isLoading }) {
   return (
-    <ImageBackground source={imgBackground} style={styles.imageBackground}>
+    <ImageBackground style={styles.imageBackground} source={imgBackground}>
       <View style={styles.middleContainer}>
         <Image source={imgLogo} />
         <View style={styles.textInputContainer}>
@@ -32,7 +29,7 @@ function Login({ handleOnSubmit, onTextChange, error, isLoading }) {
           {error !== '' && <Text style={styles.errorText}>{error}</Text>}
         </View>
       </View>
-      <SubmitButtonWithLoading onPress={handleOnSubmit} isLoading={isLoading} />
+      <SubmitButton onPress={handleOnSubmit} isLoading={isLoading} />
       <Text style={styles.footerText}>Designed, developed and used by woloxers</Text>
     </ImageBackground>
   );

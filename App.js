@@ -13,12 +13,10 @@ const mapStateToProps = state => ({
 
 const AppWithNavigationState = connect(mapStateToProps)(AppWithNavigation);
 
-const App = () => {
-  return (
-    <Provider store={store}>
-      <AppWithNavigationState />
-    </Provider>
-  );
-};
+const App = () => (
+  <Provider store={store}>
+    <AppWithNavigationState />
+  </Provider>
+);
 
 export default App;
