@@ -1,16 +1,15 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import { ACCESS_TOKEN } from '@constants/localStorage';
+import { SESSION_DATA } from '@constants/localStorage';
 
-export const setAccessToken = async value => {
-  await AsyncStorage.setItem(ACCESS_TOKEN, value);
+export const setSessionData = async value => {
+  await AsyncStorage.setItem(SESSION_DATA, value);
 };
 
-export const getAccessToken = async () => {
-  const value = await AsyncStorage.getItem(ACCESS_TOKEN);
+export const getSessionData = async () => {
+  const value = await AsyncStorage.getItem(SESSION_DATA);
   return value;
 };
 
-export const clear = async () => {
-  const keys = [ACCESS_TOKEN];
-  await AsyncStorage.removeItem(keys);
+export const clearAll = async () => {
+  await AsyncStorage.removeItem(SESSION_DATA);
 };

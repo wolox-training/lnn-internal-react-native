@@ -1,1 +1,1 @@
-export const ACCESS_TOKEN = 'access-token';
+export const SESSION_DATA = 'session-data';

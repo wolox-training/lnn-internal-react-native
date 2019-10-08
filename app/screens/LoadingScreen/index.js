@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { getAccessToken } from '@utils/asyncStorage';
+import { getSessionData } from '@utils/asyncStorage';
 import { ROUTES } from '@config/screens';
 
 class LoadingScreen extends PureComponent {
@@ -8,7 +8,7 @@ class LoadingScreen extends PureComponent {
     const {
       navigation: { navigate }
     } = this.props;
-    getAccessToken().then(res => {
+    getSessionData().then(res => {
       if (res) {
         navigate(ROUTES.LIBRARY);
       } else {
