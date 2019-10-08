@@ -14,7 +14,6 @@ const privateBookActions = {
 export const bookActions = {
   getBooks: () => async dispatch => {
     dispatch({ type: actionTypes.GET_BOOKS });
-    // import BookService from your service file
     const response = await BookService.getBooks();
     if (response.ok) {
       dispatch(privateBookActions.getBooksSuccess(response.data.page));
