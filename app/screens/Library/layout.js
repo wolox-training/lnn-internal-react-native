@@ -19,9 +19,9 @@ function Library({ data, renderBook, keyExtractor, error }) {
 }
 
 Library.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape(bookDataPropTypes)).isRequired,
   keyExtractor: PropTypes.func.isRequired,
   renderBook: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape(bookDataPropTypes)),
   error: PropTypes.string
 };
 

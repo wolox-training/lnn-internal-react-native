@@ -1,22 +1,17 @@
-import { actionTypes } from './actions';
+/* eslint-disable new-cap */
+import Immutable from 'seamless-immutable';
+import { createReducer, completeReducer, completeState } from 'redux-recompose';
 
-const initialState = {
-  books: [],
-  booksLoading: false,
-  booksError: null
+import { actions } from './actions';
+
+const defaultState = completeState({
+  books: []
+});
+
+const reducerDescription = {
+  primaryActions: [actions.GET_BOOKS]
 };
 
-export default function reducer(state = initialState, action) {
-  const { type, payload } = action;
-  switch (type) {
-    case actionTypes.GET_BOOKS:
-      return { ...state, booksLoading: true };
-    case actionTypes.GET_BOOKS_SUCCESS:
-      return { ...state, books: payload, booksLoading: false };
-    case actionTypes.GET_BOOKS_FAILURE:
-      return { ...state, booksLoading: false, booksError: payload };
+const reducer = createReducer(Immutable(defaultState), completeReducer(reducerDescription));
 
-    default:
-      return state;
-  }
-}
+export default reducer;
