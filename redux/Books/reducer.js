@@ -1,26 +1,22 @@
+import { actionTypes } from './actions';
+
 const initialState = {
   books: [],
-  isLoading: true,
-  error: ''
+  booksLoading: false,
+  booksError: null
 };
 
-function reducer(state = initialState, action) {
-  switch (action.type) {
-    case 'GET_BOOKS_SUCCESS':
-      return {
-        ...state,
-        books: action.res.data.page,
-        isLoading: false
-      };
-    case 'GET_BOOKS_FAILURE':
-      return {
-        ...state,
-        isLoading: false,
-        error: action.res.error
-      };
+export default function reducer(state = initialState, action) {
+  const { type, payload } = action;
+  switch (type) {
+    case actionTypes.GET_BOOKS:
+      return { ...state, booksLoading: true };
+    case actionTypes.GET_BOOKS_SUCCESS:
+      return { ...state, books: payload, booksLoading: false };
+    case actionTypes.GET_BOOKS_FAILURE:
+      return { ...state, booksLoading: false, booksError: payload };
+
     default:
-      return { ...state };
+      return state;
   }
 }
-
-export default reducer;

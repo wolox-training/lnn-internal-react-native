@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 // eslint-disable-next-line import/extensions
 import defaultImg from '@assets/no_image.jpeg';
-import { bookDataPropType } from '@propTypes/BookDataPropType';
+import { bookDataPropTypes } from '@propTypes/BookDataPropTypes';
 
 import { styles } from './styles';
 
@@ -31,7 +31,7 @@ class Book extends Component {
 
 Book.propTypes = {
   navigation: PropTypes.shape({ navigate: PropTypes.func.isRequired }).isRequired,
-  data: PropTypes.shape(bookDataPropType)
+  data: PropTypes.shape(bookDataPropTypes)
 };
 
 Book.defaultProps = {

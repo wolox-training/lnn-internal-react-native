@@ -6,18 +6,21 @@ export const actionTypes = {
   GET_BOOKS_FAILURE: 'GET_BOOKS_FAILURE'
 };
 
-const getAllBooks = () => dispatch => {
-  dispatch({ type: actionTypes.GET_BOOKS });
-  BookService.getBooks().then(res => {
-    if (!res.ok) {
-      return dispatch({ type: actionTypes.GET_BOOKS_FAILURE, res });
+const privateBookActions = {
+  getBooksSuccess: books => ({ type: actionTypes.GET_BOOKS_SUCCESS, payload: books }),
+  getBooksFailure: error => ({ type: actionTypes.GET_BOOKS_FAILURE, payload: error })
+};
+
+export const bookActions = {
+  getBooks: () => async dispatch => {
+    dispatch({ type: actionTypes.GET_BOOKS });
+    const response = await BookService.getBooks();
+    if (response.ok) {
+      dispatch(privateBookActions.getBooksSuccess(response.data.page));
+    } else {
+      dispatch(privateBookActions.getBooksFailure(response.error));
     }
-    return dispatch({ type: actionTypes.GET_BOOKS_SUCCESS, res });
-  });
+  }
 };
 
-const actionCreators = {
-  getAllBooks
-};
-
-export default actionCreators;
+export default bookActions;

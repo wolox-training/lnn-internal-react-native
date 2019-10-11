@@ -4,7 +4,7 @@ import { View, Text, Image } from 'react-native';
 import defaultImg from '@assets/no_image.jpeg'; // eslint-disable-line import/extensions
 import { lightBlue, white } from '@scss/colors';
 import Button from '@app/components/baseComponents/Button';
-import { bookDataPropType } from '@propTypes/BookDataPropType';
+import { bookDataPropTypes } from '@propTypes/BookDataPropTypes';
 
 import { styles } from './style';
 
@@ -29,7 +29,7 @@ function BookDetailOptions({ data: { title, author, year, genre, image } }) {
 }
 
 BookDetailOptions.propTypes = {
-  data: PropTypes.shape(bookDataPropType)
+  data: PropTypes.shape(bookDataPropTypes)
 };
 
 BookDetailOptions.defaultProps = {

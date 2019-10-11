@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, FlatList, TouchableOpacity } from 'react-native';
-import { bookDataPropType } from '@propTypes/BookDataPropType';
-import { commentDataPropType } from '@propTypes/CommentDataPropType';
+import { bookDataPropTypes } from '@propTypes/BookDataPropTypes';
+import { commentDataPropTypes } from '@propTypes/CommentDataPropTypes';
 
 import BookDetailOptions from './components/BookDetailOptions';
 import { styles } from './styles';
@@ -22,8 +22,8 @@ function BookDetail({ bookData, commentsData, renderComment, keyExtractor }) {
 }
 
 BookDetail.propTypes = {
-  bookData: PropTypes.shape(bookDataPropType).isRequired,
-  commentsData: PropTypes.arrayOf(PropTypes.shape(commentDataPropType)).isRequired,
+  bookData: PropTypes.shape(bookDataPropTypes).isRequired,
+  commentsData: PropTypes.arrayOf(PropTypes.shape(commentDataPropTypes)).isRequired,
   keyExtractor: PropTypes.func.isRequired,
   renderComment: PropTypes.func.isRequired
 };

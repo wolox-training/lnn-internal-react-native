@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, FlatList } from 'react-native';
-import { bookDataPropType } from '@propTypes/BookDataPropType';
+import { bookDataPropTypes } from '@propTypes/BookDataPropTypes';
 
 import { styles } from './styles';
 
@@ -14,7 +14,7 @@ function Wishlist({ books, renderItem }) {
 }
 
 Wishlist.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.shape(bookDataPropType)).isRequired,
+  books: PropTypes.arrayOf(PropTypes.shape(bookDataPropTypes)).isRequired,
   renderItem: PropTypes.func.isRequired
 };
 

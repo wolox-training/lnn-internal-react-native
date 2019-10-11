@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { bookDataPropType } from '@propTypes/BookDataPropType';
+import { bookDataPropTypes } from '@propTypes/BookDataPropTypes';
 
 import { COMMENT_DATA } from './constants';
 import Comment from './components/Comment';
@@ -33,7 +33,7 @@ class BookDetailContainer extends Component {
 
 BookDetailContainer.propTypes = {
   navigation: PropTypes.shape({
-    state: PropTypes.shape({ params: PropTypes.shape(bookDataPropType) })
+    state: PropTypes.shape({ params: PropTypes.shape(bookDataPropTypes) })
   })
 };
 
