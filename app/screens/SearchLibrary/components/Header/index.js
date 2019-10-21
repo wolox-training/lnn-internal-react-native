@@ -15,13 +15,13 @@ class Header extends Component {
   handleOnChangeText = text => {
     this.setState({ searchText: text });
     const onChangeText = this.props.navigation.getParam('onChangeText');
-    onChangeText(text);
+    return onChangeText && onChangeText(text);
   };
 
   handleOnClear = () => {
     this.setState({ searchText: '' });
     const onClear = this.props.navigation.getParam('onClear');
-    onClear();
+    return onClear && onClear();
   };
 
   render() {
