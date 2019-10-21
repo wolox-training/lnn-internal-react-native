@@ -2,8 +2,9 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import { ROUTES } from '@config/screens';
 import { screenNavOptions, bottomTabDefaultOptions } from '@config/navigation';
 
-import LibraryContainer from '../app/screens/Library/index';
-import BookDetailContainer from '../app/screens/BookDetail/index';
+import LibraryContainer from '../app/screens/Library';
+import SearchLibrary from '../app/screens/SearchLibrary';
+import BookDetailContainer from '../app/screens/BookDetail';
 import WishlistContainer from '../app/screens/WishList';
 import LoginContainer from '../app/screens/Login';
 import LoadingScreen from '../app/screens/LoadingScreen';
@@ -13,6 +14,10 @@ const LibraryStack = createStackNavigator(
     [ROUTES.LIBRARY]: {
       screen: LibraryContainer,
       navigationOptions: screenNavOptions[ROUTES.LIBRARY]
+    },
+    [ROUTES.SEARCH_LIBRARY]: {
+      screen: SearchLibrary,
+      navigationOptions: screenNavOptions[ROUTES.SEARCH_LIBRARY]
     },
     [ROUTES.BOOKDETAIL]: {
       screen: BookDetailContainer,

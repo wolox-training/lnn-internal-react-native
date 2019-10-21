@@ -5,7 +5,9 @@ import { white } from '@scss/colors';
 import ImageHeader from '@app/components/navigationComponents/ImageHeader';
 import BackButtonHeader from '@app/components/navigationComponents/BackButtonHeader';
 import LogoutButton from '@app/components/navigationComponents/LogoutButton';
+import SearchButton from '@app/components/navigationComponents/SearchButton';
 import IconComponent from '@app/components/baseComponents/IconComponent';
+import SearchHeader from '@app/screens/SearchLibrary/components/Header';
 
 import { lightBlue, gray } from '../scss/colors';
 
@@ -24,7 +26,8 @@ export const screenNavOptions = {
     },
     headerBackImage: BackButtonHeader,
     headerLeft: <LogoutButton navigation={navigation} />,
-    headerTitle: ROUTES_TITLES[ROUTES.LIBRARY]
+    headerTitle: ROUTES_TITLES[ROUTES.LIBRARY],
+    headerRight: <SearchButton navigation={navigation} />
   }),
   [ROUTES.WISHLIST]: {
     headerBackground: <ImageHeader />,
@@ -43,7 +46,10 @@ export const screenNavOptions = {
     },
     headerBackImage: BackButtonHeader,
     headerTitle: ROUTES_TITLES[ROUTES.BOOKDETAIL]
-  }
+  },
+  [ROUTES.SEARCH_LIBRARY]: ({ navigation }) => ({
+    header: <SearchHeader navigation={navigation} />
+  })
 };
 
 export const bottomTabDefaultOptions = ({ navigation }) => ({

@@ -3,7 +3,8 @@ export const ROUTES = {
   WISHLIST: 'wishlist',
   BOOKDETAIL: 'bookDetail',
   LOGIN: 'login',
-  LOADING_SCREEN: 'loadingScreen'
+  LOADING_SCREEN: 'loadingScreen',
+  SEARCH_LIBRARY: 'searchLibrary'
 };
 
 export const ROUTES_TITLES = {
