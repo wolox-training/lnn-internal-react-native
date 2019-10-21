@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { mediumSize } from '@scss/fonts';
 import { black, softGray } from '@scss/colors';
+import { SCREEN_IMAGE_SIZE } from '@constants/icons';
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,8 +9,8 @@ export const styles = StyleSheet.create({
     marginTop: '50%'
   },
   image: {
-    height: 40,
-    width: 40
+    height: SCREEN_IMAGE_SIZE,
+    width: SCREEN_IMAGE_SIZE
   },
   title: {
     fontSize: mediumSize,

@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { white } from '@scss/colors';
+import { HEADER_ICON_SIZE } from '@constants/icons';
 
 export const styles = StyleSheet.create({
   container: {
@@ -18,13 +19,13 @@ export const styles = StyleSheet.create({
     height: 110
   },
   iconLeft: {
-    height: 15,
-    width: 15,
+    height: HEADER_ICON_SIZE,
+    width: HEADER_ICON_SIZE,
     marginLeft: 10
   },
   iconRight: {
-    height: 15,
-    width: 15,
+    height: HEADER_ICON_SIZE,
+    width: HEADER_ICON_SIZE,
     marginRight: 10
   },
   textInput: {
