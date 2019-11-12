@@ -21,9 +21,20 @@ class LibraryContainer extends Component {
 
   render() {
     const { books, error, isLoading } = this.props;
+    const optionalBooks = [
+      {
+        author: 'Lucas Nestrojil',
+        genre: 'Drama',
+        id: 1,
+        editor: 'lalala',
+        title: 'Historia',
+        year: 2019,
+        image: undefined
+      }
+    ];
     return (
       <LibraryWithLoading
-        data={books}
+        data={optionalBooks || books}
         renderBook={this.renderBook}
         keyExtractor={this.keyExtractor}
         error={error}

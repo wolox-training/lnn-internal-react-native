@@ -6,6 +6,7 @@ import { lightBlue, white } from '@scss/colors';
 import Button from '@app/components/baseComponents/Button';
 import { bookDataPropTypes } from '@propTypes/BookDataPropTypes';
 
+import AnimatedButton from './component/AnimatedButton';
 import { styles } from './style';
 
 function BookDetailOptions({ data: { title, author, year, genre, image } }) {
@@ -22,7 +23,7 @@ function BookDetailOptions({ data: { title, author, year, genre, image } }) {
       </View>
       <View style={styles.buttonContainer}>
         <Button title="ADD TO WISHLIST" containerStyle={{ backgroundColor: white, color: lightBlue }} />
-        <Button title="RENT" containerStyle={{ backgroundColor: lightBlue, color: white }} />
+        <AnimatedButton title="RENT" />
       </View>
     </View>
   );
