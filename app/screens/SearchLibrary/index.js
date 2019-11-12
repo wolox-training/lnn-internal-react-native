@@ -4,13 +4,14 @@ import BookService from '@services/BookService';
 
 import Book from '../Library/components/Book';
 
+import { getFilteredBooksSelector } from './selectors';
 import SearchLibrary from './layout';
 
 class SearchLibraryContainer extends Component {
   state = {
+    searchText: '',
     isLoading: true,
-    books: [],
-    searchBooks: []
+    books: []
   };
 
   componentDidMount() {
@@ -34,13 +35,11 @@ class SearchLibraryContainer extends Component {
   };
 
   handleOnChangeText = text => {
-    this.setState(prevState => ({
-      searchBooks: prevState.books.filter(item => item.title.toUpperCase().includes(text.toUpperCase()))
-    }));
+    this.setState({ searchText: text });
   };
 
   handleOnClear = () => {
-    this.setState(prevState => ({ searchBooks: prevState.books }));
+    this.setState({ searchText: '' });
   };
 
   renderItem = ({ item }) => <Book data={item} {...this.props} />;
@@ -48,7 +47,8 @@ class SearchLibraryContainer extends Component {
   keyExtractor = item => item.id.toString();
 
   render() {
-    const { isLoading, searchBooks } = this.state;
+    const { isLoading } = this.state;
+    const searchBooks = getFilteredBooksSelector(this.state);
     return (
       <SearchLibrary
         data={searchBooks}
