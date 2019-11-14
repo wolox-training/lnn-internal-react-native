@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { actionCreators } from '@redux/Books/actions';
@@ -11,6 +12,7 @@ import Book from './components/Book';
 const LibraryWithLoading = withLoading(Library);
 class LibraryContainer extends Component {
   componentDidMount() {
+    StatusBar.setBackgroundColor('rgba(0,0,0,0.3)');
     const { getBooks } = this.props;
     getBooks();
   }
@@ -28,7 +30,7 @@ class LibraryContainer extends Component {
         id: 1,
         editor: 'lalala',
         title: 'Historia',
-        year: 2019,
+        year: '2019',
         image: undefined
       }
     ];

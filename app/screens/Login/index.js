@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { StatusBar } from 'react-native';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import actionCreators from '@redux/Login/actions';
@@ -12,6 +13,19 @@ class LoginContainer extends Component {
     pass: '',
     error: null
   };
+
+  navListener;
+
+  componentDidMount() {
+    const { addListener } = this.props.navigation;
+    addListener('didFocus', () => {
+      StatusBar.setBackgroundColor('#000000');
+    });
+  }
+
+  componentWillUnmount() {
+    this.navListener.remove();
+  }
 
   onSubmit = () => {
     const { login } = this.props;
@@ -48,8 +62,9 @@ class LoginContainer extends Component {
 LoginContainer.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   login: PropTypes.func.isRequired,
+  addListener: PropTypes.func,
   loginError: PropTypes.string,
-  navigation: PropTypes.shape({ navigate: PropTypes.func })
+  navigation: PropTypes.shape({ addListener: PropTypes.func })
 };
 
 const mapDispatchToProps = dispatch => ({
