@@ -18,7 +18,7 @@ class LoginContainer extends Component {
 
   componentDidMount() {
     const { addListener } = this.props.navigation;
-    addListener('didFocus', () => {
+    this.navListener = addListener('didFocus', () => {
       StatusBar.setBackgroundColor('#000000');
     });
   }
