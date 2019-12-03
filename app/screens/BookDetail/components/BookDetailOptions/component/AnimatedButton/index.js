@@ -8,7 +8,6 @@ import { styles } from './styles';
 
 class AnimatedButton extends Component {
   state = {
-    // borderRadius: new Animated.Value(0),
     width: new Animated.Value(BUTTON_RADIUS_SIZE),
     fadeImage: new Animated.Value(0),
     fadeText: new Animated.Value(1)
